@@ -1,0 +1,27 @@
+2025-03-26T06:39:58+00:00 CRITICAL Uncaught Error: Failed opening required '/home/agroswift/public_html/wp-includes/PHPMailer/PHPMailer.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/agroswift/public_html/wp-content/plugins/gosmtp/init.php:120
+Stack trace:
+#0 /home/agroswift/public_html/wp-includes/class-wp-hook.php(324): gosmtp_load_phpmailer(Array)
+#1 /home/agroswift/public_html/wp-includes/plugin.php(205): WP_Hook->apply_filters(Array, Array)
+#2 /home/agroswift/public_html/wp-includes/pluggable.php(192): apply_filters('wp_mail', Array)
+#3 /home/agroswift/public_html/wp-content/plugins/contact-form-7/includes/mail.php(135): wp_mail('projectoffice11...', 'Dear Sir/Madam,...', 'Dear Sir/Madam,...', 'From: <info@agr...', Array)
+#4 /home/agroswift/public_html/wp-content/plugins/contact-form-7/includes/mail.php(19): WPCF7_Mail->compose()
+#5 /home/agroswift/public_html/wp-content/plugins/contact-form-7/includes/submission.php(474): WPCF7_Mail::send(Array, 'mail')
+#6 /home/agroswift/public_html/wp-content/plugins/contact-form-7/includes/submission.php(92): WPCF7_Submission->mail()
+#7 /home/agroswift/public_html/wp-content/plugins/contact-form-7/includes/submission.php(24): WPCF7_Submission->proceed()
+#8 /home/agroswift/public_html/wp-content/plugins/contact-form-7/includes/contact-form.php(763): WPCF7_Submission::get_instance(Object(WPCF7_ContactForm), Array)
+#9 /home/agroswift/public_html/wp-content/plugins/contact-form-7/includes/rest-api.php(321): WPCF7_ContactForm->submit()
+#10 /home/agroswift/public_html/wp-includes/rest-api/class-wp-rest-server.php(1230): wpcf7_rest_create_feedback(Object(WP_REST_Request))
+#11 /home/agroswift/public_html/wp-includes/rest-api/class-wp-rest-server.php(1063): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/contact-form-7...', Array, NULL)
+#12 /home/agroswift/public_html/wp-includes/rest-api/class-wp-rest-server.php(439): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#13 /home/agroswift/public_html/wp-includes/rest-api.php(428): WP_REST_Server->serve_request('/contact-form-7...')
+#14 /home/agroswift/public_html/wp-includes/class-wp-hook.php(324): rest_api_loaded(Object(WP))
+#15 /home/agroswift/public_html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#16 /home/agroswift/public_html/wp-includes/plugin.php(565): WP_Hook->do_action(Array)
+#17 /home/agroswift/public_html/wp-includes/class-wp.php(418): do_action_ref_array('parse_request', Array)
+#18 /home/agroswift/public_html/wp-includes/class-wp.php(813): WP->parse_request('')
+#19 /home/agroswift/public_html/wp-includes/functions.php(1336): WP->main('')
+#20 /home/agroswift/public_html/wp-blog-header.php(16): wp()
+#21 /home/agroswift/public_html/index.php(17): require('/home/agroswift...')
+#22 {main}
+  thrown in /home/agroswift/public_html/wp-content/plugins/gosmtp/init.php on line 120
+

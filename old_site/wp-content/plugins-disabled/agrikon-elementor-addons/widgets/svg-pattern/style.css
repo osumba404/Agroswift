@@ -1,0 +1,443 @@
+
+.svg-pattern-wrapper{
+  position: relative;
+  line-height: 1;
+}
+/* style 3 */
+
+svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.box-with-text {
+  background-image: -webkit-linear-gradient( crimson 50%, white 50% );
+  background-position: 0 0;
+  -webkit-background-clip: text;
+  background-size: 100% 50px;
+  background-repeat: repeat;
+  -webkit-animation: stripes 3s linear infinite;
+  animation: stripes 3s linear infinite;
+  -webkit-text-fill-color: transparent;
+}
+
+@-webkit-keyframes stripes {
+  100% {
+    background-position: 0 -50px; } }
+@keyframes stripes {
+  100% {
+    background-position: 0 -50px; } }
+
+.box-with-text {
+  overflow: hidden;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.text-type-1.box-with-text:after{
+    content: none!important;
+}
+/* style 3 */
+
+
+/* style 6 */
+.style-6 .text {
+  stroke: #1d4259;
+  stroke-width: 5;
+  stroke-opacity: 0.5; }
+
+/* Colorize pattern */
+.style-6 .g-spots circle:nth-child(5n + 1) {
+  fill: #1D4259; }
+.style-6 .g-spots circle:nth-child(5n + 2) {
+  fill: #0A7373; }
+.style-6 .g-spots circle:nth-child(5n + 3) {
+  fill: #30BF7C; }
+.style-6 .g-spots circle:nth-child(5n + 4) {
+  fill: #BAF266; }
+.style-6 .g-spots circle:nth-child(5n + 5) {
+  fill: #eef272; }
+/* style 6 */
+
+
+
+
+/* style 8 */
+.style-8 .text {
+  stroke: #551f7a;
+  stroke-width: 3; }
+
+/* Colorize & animate pattern */
+.style-8 .g-stars polygon {
+  stroke-width: 0;
+  -webkit-animation: stars_stroke 2s infinite;
+  animation: stars_stroke 2s infinite; }
+  .style-8 .g-stars polygon:nth-child(5n + 1) {
+    fill: #551F7A;
+    stroke: #551F7A;
+    -webkit-animation-delay: -0.4s;
+    animation-delay: -0.4s; }
+  .style-8 .g-stars polygon:nth-child(5n + 2) {
+    fill: #BA2799;
+    stroke: #BA2799;
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s; }
+  .style-8 .g-stars polygon:nth-child(5n + 3) {
+    fill: #D9587A;
+    stroke: #D9587A;
+    -webkit-animation-delay: -1.2s;
+    animation-delay: -1.2s; }
+  .style-8 .g-stars polygon:nth-child(5n + 4) {
+    fill: #FFDD00;
+    stroke: #FFDD00;
+    -webkit-animation-delay: -1.6s;
+    animation-delay: -1.6s; }
+  .style-8 .g-stars polygon:nth-child(5n + 5) {
+    fill: #fff3a1;
+    stroke: #fff3a1;
+    -webkit-animation-delay: -2s;
+    animation-delay: -2s; }
+
+/* Change stroke-width within animation */
+@-webkit-keyframes stars_stroke {
+  50% {
+    stroke-width: 8; } }
+@keyframes stars_stroke {
+  50% {
+    stroke-width: 8; } }
+/* style 8 */
+
+
+/* style 9 */
+.style-9 .text {
+  stroke: #330000;
+  stroke-width: 8;
+  stroke-opacity: 0.5; }
+/* style 9 */
+
+
+
+/* style 10 */
+
+.style-10 .text {
+  fill: none;
+  stroke-width: 8;
+  stroke-linejoin: round; }
+
+/* Colorize & animate pattern */
+.style-10 .g-spots ellipse {
+  stroke-width: 0;
+  stroke-opacity: 1;
+  -webkit-animation: stroke 1.5s infinite;
+  animation: stroke_10 1.5s infinite; }
+  .style-10 .g-spots ellipse:nth-child(5n + 1) {
+    fill: #3F0B1B;
+    stroke: #3F0B1B;
+    -webkit-animation-delay: -0.3s;
+    animation-delay: -0.3s; }
+  .style-10 .g-spots ellipse:nth-child(5n + 2) {
+    fill: #7A1631;
+    stroke: #7A1631;
+    -webkit-animation-delay: -0.6s;
+    animation-delay: -0.6s; }
+  .style-10 .g-spots ellipse:nth-child(5n + 3) {
+    fill: #CF423C;
+    stroke: #CF423C;
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s; }
+  .style-10 .g-spots ellipse:nth-child(5n + 4) {
+    fill: #FC7D49;
+    stroke: #FC7D49;
+    -webkit-animation-delay: -1.2s;
+    animation-delay: -1.2s; }
+  .style-10 .g-spots ellipse:nth-child(5n + 5) {
+    fill: #ffd462;
+    stroke: #ffd462;
+    -webkit-animation-delay: -1.5s;
+    animation-delay: -1.5s; }
+
+/* Change stroke-width inside animation */
+@-webkit-keyframes stroke {
+  50% {
+    stroke-width: 27;
+    stroke-opacity: 0.5; } }
+@keyframes stroke_10 {
+  50% {
+    stroke-width: 27;
+    stroke-opacity: 0.5; } }
+
+/* style 10 */
+
+
+/* style 11 */
+.style-11 .text {
+  fill: none;
+  stroke-width: 6;
+  stroke-linejoin: round;
+  stroke-dasharray: 70 330;
+  stroke-dashoffset: 0;
+  -webkit-animation: stroke_11 6s infinite linear;
+  animation: stroke_11 6s infinite linear; }
+  .style-11 .text:nth-child(5n + 1) {
+    stroke: #F2385A;
+    -webkit-animation-delay: -1.2s;
+    animation-delay: -1.2s; }
+  .style-11 .text:nth-child(5n + 2) {
+    stroke: #F5A503;
+    -webkit-animation-delay: -2.4s;
+    animation-delay: -2.4s; }
+  .style-11 .text:nth-child(5n + 3) {
+    stroke: #E9F1DF;
+    -webkit-animation-delay: -3.6s;
+    animation-delay: -3.6s; }
+  .style-11 .text:nth-child(5n + 4) {
+    stroke: #56D9CD;
+    -webkit-animation-delay: -4.8s;
+    animation-delay: -4.8s; }
+  .style-11 .text:nth-child(5n + 5) {
+    stroke: #3aa1bf;
+    -webkit-animation-delay: -6s;
+    animation-delay: -6s; }
+
+@-webkit-keyframes stroke_11 {
+  100% {
+    stroke-dashoffset: -400; } }
+@keyframes stroke_11 {
+  100% {
+    stroke-dashoffset: -400; } }
+/* style 11 */
+
+
+/* style 12 */
+.style-12 .text-copy-stroke {
+  fill: none;
+  stroke: white;
+  stroke-width: 10px; }
+
+.style-12 .text-copy--shadow {
+  fill: rgba(0, 0, 0, 0.25);
+  -webkit-transform: translate(0.06em, 0.06em);
+  transform: translate(0.06em, 0.06em); }
+
+.style-12 .c-fill {
+  -webkit-transform-origin: 400px 150px;
+  transform-origin: 400px 150px;
+  -webkit-transform: rotate(32deg);
+  transform: rotate(32deg); }
+
+/* Fix for firefox */
+.style-12 .r-fill--color {
+  fill: #1a8cff; }
+/* style 12 */
+
+
+/* style 13 */
+.style-13 .text-mask {
+  fill: white;
+  stroke: white;
+  stroke-opacity: 0.2;
+  stroke-width: 10; }
+/* style 13 */
+
+
+/* style 14 */
+.style-14 .text-copy--stroke {
+  fill: transparent;
+  stroke: white;
+  stroke-width: 4; }
+
+.style-14 .text-copy--shadow {
+  fill: rgba(0, 0, 0, 0.25);
+  -webkit-transform: translate(0.06em, 0.06em);
+  transform: translate(0.06em, 0.06em); }
+
+
+.style-14 .c-ring {
+  fill: none;
+  stroke-width: 2;
+  stroke: white; }
+/* style 14 */
+
+
+/* style 15 */
+.style-15 .text-copy--stroke {
+  fill: transparent;
+  stroke: white;
+  stroke-width: 4; }
+
+.style-15 .text-copy--shadow {
+  fill: rgba(0, 0, 0, 0.25);
+  -webkit-transform: translate(0.06em, 0.06em);
+  transform: translate(0.06em, 0.06em); }
+
+.style-15 .r-fill {
+  -webkit-transform-origin: 300px 150px;
+  transform-origin: 300px 150px;
+  -webkit-animation: rotate_15 30s infinite linear;
+  animation: rotate_15 30s infinite linear; }
+
+.style-15 .c-ring {
+  fill: none;
+  stroke-width: 2;
+  stroke: white; }
+
+.style-15 .c-ring--fill {
+  fill: white;
+  stroke-width: 0;
+  stroke: white;
+  -webkit-animation: stroke_15 5s infinite;
+  animation: stroke_15 5s infinite; }
+
+@-webkit-keyframes stroke_15 {
+  50% {
+    stroke-width: 15; } }
+@keyframes stroke_15 {
+  50% {
+    stroke-width: 15; } }
+@-webkit-keyframes rotate_15 {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@keyframes rotate_15 {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+/* style 15 */
+
+
+/* style 16 */
+.style-16 .text--transparent {
+  fill: transparent; }
+
+.style-16 .anim-shape {
+  -webkit-transform-origin: 0px 150px;
+  transform-origin: 0px 150px;
+  -webkit-transform: scale(0, 1) translate(0, 0);
+  transform: scale(0, 1) translate(0, 0);
+  -webkit-animation: moving-panel 3s infinite alternate;
+  animation: moving-panel 3s infinite alternate; }
+  .colortext .anim-shape:nth-child(1) {
+    fill: #0e1826; }
+  .colortext .anim-shape:nth-child(2) {
+    fill: #166973; }
+  .colortext .anim-shape:nth-child(3) {
+    fill: #65bfa6; }
+  .colortext .anim-shape:nth-child(4) {
+    fill: #f2cd5c; }
+  .colortext .anim-shape:nth-child(5) {
+    fill: #f26444; }
+
+.style-16 .shadow {
+  -webkit-transform: translate(10px, 10px);
+  transform: translate(10px, 10px); }
+
+.style-16 .anim-shape--shadow {
+  fill: #000;
+  fill-opacity: 0.2; }
+
+@-webkit-keyframes moving-panel {
+  100% {
+    -webkit-transform: scale(1, 1) translate(20px, 0);
+    transform: scale(1, 1) translate(20px, 0); } }
+@keyframes moving-panel {
+  100% {
+    -webkit-transform: scale(1, 1) translate(20px, 0);
+    transform: scale(1, 1) translate(20px, 0); } }
+/* style 16 */
+
+
+/* style 17 */
+.style-17 .svg-inverted-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; }
+
+.style-17 .mask__shape {
+  fill: white; }
+
+.style-17 .box-with-text {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  padding-top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  /* Hide the line */ }
+  .box-with-text:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 2px solid lightgoldenrodyellow; }
+
+.style-17 .text-fill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  overflow: hidden; }
+
+.style-17 .shape--fill {
+  fill: lightgoldenrodyellow; }
+
+/* Transparent copy of text to keep patterned text selectable */
+.style-17 .text--transparent {
+  fill: transparent; }
+
+/* Function for getting colors from list if we need quantity of colors more than colors in array  */
+/* Function for creating multiple box-shadow */
+/* Element with animated shadows */
+.style-17 .shadows {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1vmax;
+  height: 1vmax;
+  background: gold;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2vmax purple, 0 0 0 4vmax crimson, 0 0 0 6vmax red, 0 0 0 8vmax orangered, 0 0 0 10vmax tomato, 0 0 0 12vmax gold, 0 0 0 14vmax yellow, 0 0 0 16vmax yellowgreen, 0 0 0 18vmax turquoise, 0 0 0 20vmax royalblue, 0 0 0 22vmax mediumslateblue, 0 0 0 24vmax mediumorchid, 0 0 0 26vmax purple, 0 0 0 28vmax crimson, 0 0 0 30vmax red, 0 0 0 32vmax orangered, 0 0 0 34vmax tomato, 0 0 0 36vmax gold, 0 0 0 38vmax yellow, 0 0 0 40vmax yellowgreen, 0 0 0 42vmax turquoise, 0 0 0 44vmax royalblue, 0 0 0 46vmax mediumslateblue, 0 0 0 48vmax mediumorchid, 0 0 0 50vmax darkviolet, 0 0 0 52vmax purple, 0 0 0 54vmax crimson, 0 0 0 56vmax red, 0 0 0 58vmax orangered, 0 0 0 60vmax tomato, 0 0 0 62vmax gold, 0 0 0 64vmax yellow, 0 0 0 66vmax yellowgreen, 0 0 0 68vmax turquoise, 0 0 0 70vmax royalblue, 0 0 0 72vmax mediumslateblue, 0 0 0 74vmax mediumorchid, 0 0 0 76vmax darkviolet, 0 0 0 78vmax purple, 0 0 0 80vmax crimson, 0 0 0 82vmax red, 0 0 0 84vmax orangered, 0 0 0 86vmax tomato, 0 0 0 88vmax gold, 0 0 0 90vmax yellow;
+  -webkit-animation: shadows-move 4s linear infinite;
+  animation: shadows-move 4s linear infinite; }
+
+@-webkit-keyframes shadows-move {
+  25% {
+    box-shadow: 0 0 0 2vmax royalblue, 0 0 0 4vmax mediumslateblue, 0 0 0 6vmax mediumorchid, 0 0 0 8vmax purple, 0 0 0 10vmax crimson, 0 0 0 12vmax red, 0 0 0 14vmax orangered, 0 0 0 16vmax tomato, 0 0 0 18vmax gold, 0 0 0 20vmax yellow, 0 0 0 22vmax yellowgreen, 0 0 0 24vmax turquoise, 0 0 0 26vmax royalblue, 0 0 0 28vmax mediumslateblue, 0 0 0 30vmax mediumorchid, 0 0 0 32vmax darkviolet, 0 0 0 34vmax purple, 0 0 0 36vmax crimson, 0 0 0 38vmax red, 0 0 0 40vmax orangered, 0 0 0 42vmax tomato, 0 0 0 44vmax gold, 0 0 0 46vmax yellow, 0 0 0 48vmax yellowgreen, 0 0 0 50vmax turquoise, 0 0 0 52vmax royalblue, 0 0 0 54vmax mediumslateblue, 0 0 0 56vmax mediumorchid, 0 0 0 58vmax darkviolet, 0 0 0 60vmax purple, 0 0 0 62vmax crimson, 0 0 0 64vmax red, 0 0 0 66vmax orangered, 0 0 0 68vmax tomato, 0 0 0 70vmax gold, 0 0 0 72vmax yellow, 0 0 0 74vmax yellowgreen, 0 0 0 76vmax turquoise, 0 0 0 78vmax royalblue, 0 0 0 80vmax mediumslateblue, 0 0 0 82vmax mediumorchid, 0 0 0 84vmax darkviolet, 0 0 0 86vmax purple, 0 0 0 88vmax crimson, 0 0 0 90vmax red; }
+  45% {
+    box-shadow: 0 0 0 2vmax yellow, 0 0 0 4vmax yellowgreen, 0 0 0 6vmax turquoise, 0 0 0 8vmax royalblue, 0 0 0 10vmax mediumslateblue, 0 0 0 12vmax mediumorchid, 0 0 0 14vmax purple, 0 0 0 16vmax crimson, 0 0 0 18vmax red, 0 0 0 20vmax orangered, 0 0 0 22vmax tomato, 0 0 0 24vmax gold, 0 0 0 26vmax yellow, 0 0 0 28vmax yellowgreen, 0 0 0 30vmax turquoise, 0 0 0 32vmax royalblue, 0 0 0 34vmax mediumslateblue, 0 0 0 36vmax mediumorchid, 0 0 0 38vmax darkviolet, 0 0 0 40vmax purple, 0 0 0 42vmax crimson, 0 0 0 44vmax red, 0 0 0 46vmax orangered, 0 0 0 48vmax tomato, 0 0 0 50vmax gold, 0 0 0 52vmax yellow, 0 0 0 54vmax yellowgreen, 0 0 0 56vmax turquoise, 0 0 0 58vmax royalblue, 0 0 0 60vmax mediumslateblue, 0 0 0 62vmax mediumorchid, 0 0 0 64vmax darkviolet, 0 0 0 66vmax purple, 0 0 0 68vmax crimson, 0 0 0 70vmax red, 0 0 0 72vmax orangered, 0 0 0 74vmax tomato, 0 0 0 76vmax gold, 0 0 0 78vmax yellow, 0 0 0 80vmax yellowgreen, 0 0 0 82vmax turquoise, 0 0 0 84vmax royalblue, 0 0 0 86vmax mediumslateblue, 0 0 0 88vmax mediumorchid, 0 0 0 90vmax darkviolet; }
+  75% {
+    box-shadow: 0 0 0 2vmax orangered, 0 0 0 4vmax tomato, 0 0 0 6vmax gold, 0 0 0 8vmax yellow, 0 0 0 10vmax yellowgreen, 0 0 0 12vmax turquoise, 0 0 0 14vmax royalblue, 0 0 0 16vmax mediumslateblue, 0 0 0 18vmax mediumorchid, 0 0 0 20vmax purple, 0 0 0 22vmax crimson, 0 0 0 24vmax red, 0 0 0 26vmax orangered, 0 0 0 28vmax tomato, 0 0 0 30vmax gold, 0 0 0 32vmax yellow, 0 0 0 34vmax yellowgreen, 0 0 0 36vmax turquoise, 0 0 0 38vmax royalblue, 0 0 0 40vmax mediumslateblue, 0 0 0 42vmax mediumorchid, 0 0 0 44vmax darkviolet, 0 0 0 46vmax purple, 0 0 0 48vmax crimson, 0 0 0 50vmax red, 0 0 0 52vmax orangered, 0 0 0 54vmax tomato, 0 0 0 56vmax gold, 0 0 0 58vmax yellow, 0 0 0 60vmax yellowgreen, 0 0 0 62vmax turquoise, 0 0 0 64vmax royalblue, 0 0 0 66vmax mediumslateblue, 0 0 0 68vmax mediumorchid, 0 0 0 70vmax darkviolet, 0 0 0 72vmax purple, 0 0 0 74vmax crimson, 0 0 0 76vmax red, 0 0 0 78vmax orangered, 0 0 0 80vmax tomato, 0 0 0 82vmax gold, 0 0 0 84vmax yellow, 0 0 0 86vmax yellowgreen, 0 0 0 88vmax turquoise, 0 0 0 90vmax royalblue; } }
+@keyframes shadows-move {
+  25% {
+    box-shadow: 0 0 0 2vmax royalblue, 0 0 0 4vmax mediumslateblue, 0 0 0 6vmax mediumorchid, 0 0 0 8vmax purple, 0 0 0 10vmax crimson, 0 0 0 12vmax red, 0 0 0 14vmax orangered, 0 0 0 16vmax tomato, 0 0 0 18vmax gold, 0 0 0 20vmax yellow, 0 0 0 22vmax yellowgreen, 0 0 0 24vmax turquoise, 0 0 0 26vmax royalblue, 0 0 0 28vmax mediumslateblue, 0 0 0 30vmax mediumorchid, 0 0 0 32vmax darkviolet, 0 0 0 34vmax purple, 0 0 0 36vmax crimson, 0 0 0 38vmax red, 0 0 0 40vmax orangered, 0 0 0 42vmax tomato, 0 0 0 44vmax gold, 0 0 0 46vmax yellow, 0 0 0 48vmax yellowgreen, 0 0 0 50vmax turquoise, 0 0 0 52vmax royalblue, 0 0 0 54vmax mediumslateblue, 0 0 0 56vmax mediumorchid, 0 0 0 58vmax darkviolet, 0 0 0 60vmax purple, 0 0 0 62vmax crimson, 0 0 0 64vmax red, 0 0 0 66vmax orangered, 0 0 0 68vmax tomato, 0 0 0 70vmax gold, 0 0 0 72vmax yellow, 0 0 0 74vmax yellowgreen, 0 0 0 76vmax turquoise, 0 0 0 78vmax royalblue, 0 0 0 80vmax mediumslateblue, 0 0 0 82vmax mediumorchid, 0 0 0 84vmax darkviolet, 0 0 0 86vmax purple, 0 0 0 88vmax crimson, 0 0 0 90vmax red; }
+  45% {
+    box-shadow: 0 0 0 2vmax yellow, 0 0 0 4vmax yellowgreen, 0 0 0 6vmax turquoise, 0 0 0 8vmax royalblue, 0 0 0 10vmax mediumslateblue, 0 0 0 12vmax mediumorchid, 0 0 0 14vmax purple, 0 0 0 16vmax crimson, 0 0 0 18vmax red, 0 0 0 20vmax orangered, 0 0 0 22vmax tomato, 0 0 0 24vmax gold, 0 0 0 26vmax yellow, 0 0 0 28vmax yellowgreen, 0 0 0 30vmax turquoise, 0 0 0 32vmax royalblue, 0 0 0 34vmax mediumslateblue, 0 0 0 36vmax mediumorchid, 0 0 0 38vmax darkviolet, 0 0 0 40vmax purple, 0 0 0 42vmax crimson, 0 0 0 44vmax red, 0 0 0 46vmax orangered, 0 0 0 48vmax tomato, 0 0 0 50vmax gold, 0 0 0 52vmax yellow, 0 0 0 54vmax yellowgreen, 0 0 0 56vmax turquoise, 0 0 0 58vmax royalblue, 0 0 0 60vmax mediumslateblue, 0 0 0 62vmax mediumorchid, 0 0 0 64vmax darkviolet, 0 0 0 66vmax purple, 0 0 0 68vmax crimson, 0 0 0 70vmax red, 0 0 0 72vmax orangered, 0 0 0 74vmax tomato, 0 0 0 76vmax gold, 0 0 0 78vmax yellow, 0 0 0 80vmax yellowgreen, 0 0 0 82vmax turquoise, 0 0 0 84vmax royalblue, 0 0 0 86vmax mediumslateblue, 0 0 0 88vmax mediumorchid, 0 0 0 90vmax darkviolet; }
+  75% {
+    box-shadow: 0 0 0 2vmax orangered, 0 0 0 4vmax tomato, 0 0 0 6vmax gold, 0 0 0 8vmax yellow, 0 0 0 10vmax yellowgreen, 0 0 0 12vmax turquoise, 0 0 0 14vmax royalblue, 0 0 0 16vmax mediumslateblue, 0 0 0 18vmax mediumorchid, 0 0 0 20vmax purple, 0 0 0 22vmax crimson, 0 0 0 24vmax red, 0 0 0 26vmax orangered, 0 0 0 28vmax tomato, 0 0 0 30vmax gold, 0 0 0 32vmax yellow, 0 0 0 34vmax yellowgreen, 0 0 0 36vmax turquoise, 0 0 0 38vmax royalblue, 0 0 0 40vmax mediumslateblue, 0 0 0 42vmax mediumorchid, 0 0 0 44vmax darkviolet, 0 0 0 46vmax purple, 0 0 0 48vmax crimson, 0 0 0 50vmax red, 0 0 0 52vmax orangered, 0 0 0 54vmax tomato, 0 0 0 56vmax gold, 0 0 0 58vmax yellow, 0 0 0 60vmax yellowgreen, 0 0 0 62vmax turquoise, 0 0 0 64vmax royalblue, 0 0 0 66vmax mediumslateblue, 0 0 0 68vmax mediumorchid, 0 0 0 70vmax darkviolet, 0 0 0 72vmax purple, 0 0 0 74vmax crimson, 0 0 0 76vmax red, 0 0 0 78vmax orangered, 0 0 0 80vmax tomato, 0 0 0 82vmax gold, 0 0 0 84vmax yellow, 0 0 0 86vmax yellowgreen, 0 0 0 88vmax turquoise, 0 0 0 90vmax royalblue; } }
+
+
+.style-17 .svg-defs {
+  width: 0;
+  height: 0; }
+
+.style-17 .wrap {
+  width: 50%;
+  position: relative;
+  text-transform: uppercase;
+  margin: 0 auto;
+  text-align: left;
+  overflow: hidden;
+  padding: 80px 0; }
+/* style 17 */
+
+
+
+
+

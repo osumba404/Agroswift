@@ -1,0 +1,12 @@
+.select2-container--default .select2-selection--multiple .select2-selection__rendered,
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+min-width: 100px!important;
+}
+
+
+.elementor-control-unit-2 {
+width: 70px!important;
+}
+.elementor-element.elementor-widget-empty.elementor-widget-agrikon-menu .elementor-widget-empty-icon{
+    display: none!important;
+}

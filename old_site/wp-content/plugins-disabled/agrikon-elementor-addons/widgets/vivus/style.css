@@ -1,0 +1,17 @@
+/* Style vivus*/
+.infographic-icon * {
+  fill-opacity: 0;
+  transition: fill-opacity 1s;
+}
+.infographic-icon svg * {
+  stroke: inherit!important;
+}
+.infographic-icon svg * {
+  stroke-width: inherit!important;
+}
+.infographic-icon.has-fill-color .finished * {
+  fill-opacity: 1;
+}
+.infographic-icon.has-fill-color .finished * {
+  fill: inherit!important;
+}
