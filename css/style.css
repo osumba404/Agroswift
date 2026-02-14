@@ -1392,9 +1392,163 @@ img {
     line-height: 1.2;
 }
 
-.about-mission,
-.about-vision,
-.about-what-we-do,
+/* About premium block — mission, vision, what we do */
+.about-premium {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-premium-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent-color);
+    margin-bottom: 0.75rem;
+}
+
+.about-premium-label--light {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.about-premium-mission {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2.25rem 2rem;
+    box-shadow: 0 8px 32px rgba(43, 68, 36, 0.08), 0 0 0 1px var(--primary-tint-90);
+    border-left: 4px solid var(--primary);
+}
+
+.about-premium-headline {
+    font-size: clamp(1.5rem, 2.8vw, 2rem);
+    font-weight: 700;
+    color: var(--primary-shade-40);
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+}
+
+.about-premium-innovation {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary-tint-95) 0%, var(--primary-tint-98) 100%);
+    border-radius: 12px;
+    border: 1px solid var(--primary-tint-85);
+}
+
+.about-premium-innovation-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 12px;
+    font-size: 1.25rem;
+}
+
+.about-premium-innovation h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--primary-shade-40);
+    margin: 0 0 0.4rem;
+}
+
+.about-premium-innovation p {
+    font-size: 0.95rem;
+    color: var(--primary-tint-25);
+    line-height: 1.55;
+    margin: 0;
+}
+
+.about-premium-vision {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-shade-20) 100%);
+    border-radius: 16px;
+    padding: 2.25rem 2rem;
+    box-shadow: 0 12px 40px rgba(43, 68, 36, 0.2);
+    color: var(--white);
+}
+
+.about-premium-vision-inner h3 {
+    font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+
+.about-premium-vision-inner p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.92);
+    margin: 0;
+}
+
+.about-premium-what {
+    padding: 2rem 0 0;
+    border-top: 1px solid var(--primary-tint-80);
+}
+
+.about-premium-what .about-premium-label {
+    margin-bottom: 1.25rem;
+}
+
+.about-premium-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.about-premium-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(43, 68, 36, 0.06);
+    border: 1px solid var(--primary-tint-88);
+    font-size: 0.95rem;
+    color: var(--primary-tint-20);
+    line-height: 1.45;
+    transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.about-premium-item:hover {
+    box-shadow: 0 8px 24px rgba(43, 68, 36, 0.1);
+    border-color: var(--primary-tint-70);
+}
+
+.about-premium-item-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-tint-60) 100%);
+    color: var(--primary-shade-40);
+    border-radius: 10px;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 640px) {
+    .about-premium-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-premium-mission,
+    .about-premium-vision {
+        padding: 1.5rem 1.5rem;
+    }
+}
+
 .about-what-we-offer {
     margin-top: 2rem;
     padding: 1.5rem 0;
@@ -1415,14 +1569,6 @@ img {
     margin: 1rem 0 0.5rem;
 }
 
-.about-mission-title {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-}
-
-.about-what-we-do ul,
 .about-what-we-offer ul {
     margin: 0.75rem 0 1rem;
     padding-left: 1.5rem;
