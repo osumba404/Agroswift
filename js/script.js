@@ -210,4 +210,21 @@ document.addEventListener('DOMContentLoaded', function() {
         goTo(0);
         startAutoplay();
     });
+
+    // Footer Send Inquiry: open mailto with subject and body pre-filled
+    document.querySelectorAll('.footer-form').forEach(function(form) {
+        form.addEventListener('submit', function(e) {
+            var nameEl = form.querySelector('input[name="name"]');
+            var emailEl = form.querySelector('input[name="email"]');
+            var msgEl = form.querySelector('textarea[name="message"]');
+            var name = nameEl ? nameEl.value.trim() : '';
+            var email = emailEl ? emailEl.value.trim() : '';
+            var msg = msgEl ? msgEl.value.trim() : '';
+            var subject = 'Website Inquiry' + (name ? ' from ' + name : '');
+            var body = (name ? 'Name: ' + name + '\n' : '') + (email ? 'Email: ' + email + '\n\n' : '') + (msg ? 'Message:\n' + msg : '');
+            var mailto = 'mailto:info@agroswift.co.ke?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            e.preventDefault();
+            window.location.href = mailto;
+        });
+    });
 });
