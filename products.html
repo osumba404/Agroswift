@@ -45,80 +45,13 @@
         <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
     </nav>
 
-    <section class="hero hero--subpage">
-        <div class="container hero-content">
-            <h1>Products and agro-input solutions</h1>
-            <p>Explore the core product ranges that power AgroSwift’s support for farmers, livestock keepers, and
-                agro-vet outlets.</p>
-        </div>
-    </section>
-
-    <section class="products-section">
+    <section class="products-intro">
         <div class="container">
-            <div class="section-header">
-                <h2>Our Agricultural Solutions</h2>
-                <p>Comprehensive inputs to support every stage of your farming journey.</p>
-            </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="assets/seeds.jpg" alt="Quality crop seeds">
-                    </div>
-                    <div class="product-info">
-                        <h3>Quality Seeds</h3>
-                        <p>Certified seeds selected for strong germination, resilience, and higher yield potential.</p>
-                        <a href="index.html#contact" class="learn-more">Inquire now <i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="assets/crop-protection.jpg" alt="Crop protection products">
-                    </div>
-                    <div class="product-info">
-                        <h3>Crop Protection</h3>
-                        <p>Practical pest, weed, and disease management solutions to protect every stage of your crop.</p>
-                        <a href="index.html#contact" class="learn-more">Inquire now <i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="assets/animal-feeds.jpg" alt="Animal feeds and rations">
-                    </div>
-                    <div class="product-info">
-                        <h3>Animal Feeds</h3>
-                        <p>Balanced feeds and rations to support healthy growth, reproduction, and consistent performance.</p>
-                        <a href="index.html#contact" class="learn-more">Inquire now <i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="assets/animal-health.jpg" alt="Animal health products">
-                    </div>
-                    <div class="product-info">
-                        <h3>Animal Health</h3>
-                        <p>Vaccines, dewormers, and supplements that reduce disease losses and safeguard herd health.</p>
-                        <a href="index.html#contact" class="learn-more">Inquire now <i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="assets/farm-tools.jpg" alt="Farm tools and equipment">
-                    </div>
-                    <div class="product-info">
-                        <h3>Farm Tools</h3>
-                        <p>Durable tools and equipment that simplify routine tasks and improve farm efficiency.</p>
-                        <a href="index.html#contact" class="learn-more">Inquire Now <i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
+            <div class="products-intro-inner">
+                <span class="products-intro-badge">What we offer</span>
+                <h1 class="products-intro-title">Products and agro-input solutions</h1>
+                <p class="products-intro-lead">Explore the core product ranges that power AgroSwift’s support for farmers, livestock keepers, and agro-vet outlets.</p>
+                <div class="products-intro-accent"></div>
             </div>
         </div>
     </section>
@@ -132,7 +65,18 @@
             </div>
             <div class="farmstead-grid">
                 <div class="farm-card">
-                    <div class="card-image card-image--img" style="background-image: url('assets/images/poultry/poultry-1.jpg');"></div>
+                    <div class="card-carousel-wrap">
+                        <div class="card-carousel" data-autoplay="4000">
+                            <div class="card-carousel-inner">
+                                <div class="card-carousel-slide active"><img src="assets/images/poultry/poultry-1.jpg" alt="Poultry house"></div>
+                                <div class="card-carousel-slide"><img src="assets/images/poultry/poultry-2.jpg" alt="Poultry"></div>
+                                <div class="card-carousel-slide"><img src="assets/images/poultry/poultry-3.jpg" alt="Hatchery"></div>
+                            </div>
+                            <button type="button" class="card-carousel-btn card-carousel-prev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button type="button" class="card-carousel-btn card-carousel-next" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+                            <div class="card-carousel-dots"></div>
+                        </div>
+                    </div>
                     <div class="card-content">
                         <div class="product-category">poultry · housing</div>
                         <h3>Poultry house & hatchery</h3>
@@ -140,7 +84,18 @@
                     </div>
                 </div>
                 <div class="farm-card">
-                    <div class="card-image card-image--img" style="background-image: url('assets/images/poultry/poultry-2.jpg');"></div>
+                    <div class="card-carousel-wrap">
+                        <div class="card-carousel" data-autoplay="4000">
+                            <div class="card-carousel-inner">
+                                <div class="card-carousel-slide active"><img src="assets/images/poultry/poultry-2.jpg" alt="Bird farm"></div>
+                                <div class="card-carousel-slide"><img src="assets/images/poultry/poultry-3.jpg" alt="Flock"></div>
+                                <div class="card-carousel-slide active"><img src="assets/images/poultry/poultry-1.jpg" alt="Poultry"></div>
+                            </div>
+                            <button type="button" class="card-carousel-btn card-carousel-prev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button type="button" class="card-carousel-btn card-carousel-next" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+                            <div class="card-carousel-dots"></div>
+                        </div>
+                    </div>
                     <div class="card-content">
                         <div class="product-category">flock · managed</div>
                         <h3>Bird farm flock</h3>
@@ -148,7 +103,18 @@
                     </div>
                 </div>
                 <div class="farm-card">
-                    <div class="card-image card-image--img" style="background-image: url('assets/images/poultry/poultry-3.jpg');"></div>
+                    <div class="card-carousel-wrap">
+                        <div class="card-carousel" data-autoplay="4000">
+                            <div class="card-carousel-inner">
+                                <div class="card-carousel-slide active"><img src="assets/images/poultry/poultry-3.jpg" alt="Hatchery"></div>
+                                <div class="card-carousel-slide"><img src="assets/images/poultry/poultry-1.jpg" alt="Birds"></div>
+                                <div class="card-carousel-slide"><img src="assets/images/poultry/poultry-2.jpg" alt="Poultry"></div>
+                            </div>
+                            <button type="button" class="card-carousel-btn card-carousel-prev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button type="button" class="card-carousel-btn card-carousel-next" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+                            <div class="card-carousel-dots"></div>
+                        </div>
+                    </div>
                     <div class="card-content">
                         <div class="product-category">hatchery · quality</div>
                         <h3>Hatchery & healthy birds</h3>
@@ -168,7 +134,18 @@
             </div>
             <div class="farmstead-grid">
                 <div class="farm-card">
-                    <div class="card-image card-image--img" style="background-image: url('assets/images/ranch/ranch-1.jpg');"></div>
+                    <div class="card-carousel-wrap">
+                        <div class="card-carousel" data-autoplay="4000">
+                            <div class="card-carousel-inner">
+                                <div class="card-carousel-slide active"><img src="assets/images/ranch/ranch-1.jpg" alt="Bulls and beef cattle"></div>
+                                <div class="card-carousel-slide"><img src="assets/images/ranch/ranch-2.jpg" alt="Ranch"></div>
+                                <div class="card-carousel-slide"><img src="assets/images/ranch/ranch-3.jpg" alt="Cattle"></div>
+                            </div>
+                            <button type="button" class="card-carousel-btn card-carousel-prev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button type="button" class="card-carousel-btn card-carousel-next" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+                            <div class="card-carousel-dots"></div>
+                        </div>
+                    </div>
                     <div class="card-content">
                         <div class="product-category">beef · cattle</div>
                         <h3>Bulls & beef cattle</h3>
@@ -176,7 +153,18 @@
                     </div>
                 </div>
                 <div class="farm-card">
-                    <div class="card-image card-image--img" style="background-image: url('assets/images/ranch/ranch-2.jpg');"></div>
+                    <div class="card-carousel-wrap">
+                        <div class="card-carousel" data-autoplay="4000">
+                            <div class="card-carousel-inner">
+                                <div class="card-carousel-slide active"><img src="assets/images/ranch/ranch-2.jpg" alt="Dairy unit"></div>
+                                <div class="card-carousel-slide"><img src="assets/images/ranch/ranch-3.jpg" alt="Dairy cow"></div>
+                                <div class="card-carousel-slide"><img src="assets/images/ranch/ranch-1.jpg" alt="Ranch"></div>
+                            </div>
+                            <button type="button" class="card-carousel-btn card-carousel-prev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button type="button" class="card-carousel-btn card-carousel-next" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+                            <div class="card-carousel-dots"></div>
+                        </div>
+                    </div>
                     <div class="card-content">
                         <div class="product-category">dairy · unit</div>
                         <h3>Dairy cow & dairy unit</h3>
@@ -184,7 +172,18 @@
                     </div>
                 </div>
                 <div class="farm-card">
-                    <div class="card-image card-image--img" style="background-image: url('assets/images/ranch/ranch-3.jpg');"></div>
+                    <div class="card-carousel-wrap">
+                        <div class="card-carousel" data-autoplay="4000">
+                            <div class="card-carousel-inner">
+                                <div class="card-carousel-slide active"><img src="assets/images/ranch/ranch-3.jpg" alt="Ranch herd"></div>
+                                <div class="card-carousel-slide"><img src="assets/images/ranch/ranch-1.jpg" alt="Pasture"></div>
+                                <div class="card-carousel-slide"><img src="assets/images/ranch/ranch-2.jpg" alt="Herd"></div>
+                            </div>
+                            <button type="button" class="card-carousel-btn card-carousel-prev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button type="button" class="card-carousel-btn card-carousel-next" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+                            <div class="card-carousel-dots"></div>
+                        </div>
+                    </div>
                     <div class="card-content">
                         <div class="product-category">ranch · pasture</div>
                         <h3>Ranch herd & pasture</h3>
@@ -204,7 +203,18 @@
             </div>
             <div class="farmstead-grid">
                 <div class="farm-card">
-                    <div class="card-image card-image--img" style="background-image: url('assets/images/agrovet/Incubator1.png');"></div>
+                    <div class="card-carousel-wrap">
+                        <div class="card-carousel" data-autoplay="4000">
+                            <div class="card-carousel-inner">
+                                <div class="card-carousel-slide active"><img src="assets/images/agrovet/Incubator1.png" alt="Incubator"></div>
+                                <div class="card-carousel-slide"><img src="assets/images/agrovet/Boots1.jpg" alt="Incubators"></div>
+                                <div class="card-carousel-slide"><img src="assets/images/agrovet/Bird cage.png" alt="Incubator equipment"></div>
+                            </div>
+                            <button type="button" class="card-carousel-btn card-carousel-prev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button type="button" class="card-carousel-btn card-carousel-next" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+                            <div class="card-carousel-dots"></div>
+                        </div>
+                    </div>
                     <div class="card-content">
                         <div class="product-category">equipment · incubation</div>
                         <h3>Incubators</h3>
@@ -212,7 +222,18 @@
                     </div>
                 </div>
                 <div class="farm-card">
-                    <div class="card-image card-image--img" style="background-image: url('assets/images/agrovet/Boots1.jpg');"></div>
+                    <div class="card-carousel-wrap">
+                        <div class="card-carousel" data-autoplay="4000">
+                            <div class="card-carousel-inner">
+                                <div class="card-carousel-slide active"><img src="assets/images/agrovet/Boots1.jpg" alt="Protective footwear"></div>
+                                <div class="card-carousel-slide"><img src="assets/images/agrovet/Bird cage.png" alt="Farm boots"></div>
+                                <div class="card-carousel-slide"><img src="assets/images/agrovet/Incubator1.png" alt="Safety gear"></div>
+                            </div>
+                            <button type="button" class="card-carousel-btn card-carousel-prev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button type="button" class="card-carousel-btn card-carousel-next" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+                            <div class="card-carousel-dots"></div>
+                        </div>
+                    </div>
                     <div class="card-content">
                         <div class="product-category">safety · footwear</div>
                         <h3>Protective farm footwear</h3>
@@ -220,7 +241,18 @@
                     </div>
                 </div>
                 <div class="farm-card">
-                    <div class="card-image card-image--img" style="background-image: url('assets/images/agrovet/Bird cage.png');"></div>
+                    <div class="card-carousel-wrap">
+                        <div class="card-carousel" data-autoplay="4000">
+                            <div class="card-carousel-inner">
+                                <div class="card-carousel-slide active"><img src="assets/images/agrovet/Bird cage.png" alt="Bird cages"></div>
+                                <div class="card-carousel-slide"><img src="assets/images/agrovet/Incubator1.png" alt="Bird cage accessories"></div>
+                                <div class="card-carousel-slide"><img src="assets/images/agrovet/Boots1.jpg" alt="Poultry housing"></div>
+                            </div>
+                            <button type="button" class="card-carousel-btn card-carousel-prev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button type="button" class="card-carousel-btn card-carousel-next" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+                            <div class="card-carousel-dots"></div>
+                        </div>
+                    </div>
                     <div class="card-content">
                         <div class="product-category">housing · accessories</div>
                         <h3>Bird cages & accessories</h3>
