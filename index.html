@@ -22,32 +22,64 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">AgroSwift</a>
+            <a href="index.html" class="logo-wrap">
+                <img src="assets/images/logo/agroswift_logo.png" alt="AgroSwift" class="logo-img" onerror="this.style.display='none'">
+                <span class="logo">AgroSwift</span>
+            </a>
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#products" class="nav-link">Products</a></li>
-                <li><a href="#about" class="nav-link">Why Us</a></li>
-                <li><a href="#impact" class="nav-link">Impact</a></li>
-                <li><a href="#contact" class="nav-link btn-primary">Contact Us</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="impact.html" class="nav-link">Impact</a></li>
+                <li><a href="distribution.html" class="nav-link">Distribution</a></li>
+                <li><a href="advisory.html" class="nav-link">Advisory</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-bg-overlay"></div>
-        <div class="container hero-content">
-            <h1>Reliable Inputs for <span class="highlight">Bumper Harvests</span></h1>
-            <p>We deliver genuine agricultural inputs, expert advice, and practical solutions directly to farmers and
-                retailers. Fast, affordable, and trusted.</p>
-            <div class="hero-btns">
-                <a href="#products" class="btn btn-primary">Browse Products</a>
-                <a href="#contact" class="btn btn-outline">Partner With Us</a>
+    <!-- Hero Section — sliding templates & background images -->
+    <section id="home" class="hero hero--slider">
+        <div class="hero-slider">
+            <div class="hero-slides">
+                <div class="hero-slide active" style="background-image: url('assets/images/livestock/Bull1.jpg');" data-slide="0"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero/slide-2.jpg');" data-slide="1"></div>
+                <div class="hero-slide" style="background-image: url('assets/images/hero/slide-3.jpg');" data-slide="2"></div>
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content-wrap">
+                <div class="hero-slide-content active" data-slide="0">
+                    <h1>Dependable agro-inputs, <span class="highlight">delivered swiftly.</span></h1>
+                    <p>AgroSwift connects farmers, retailers, and distributors to genuine agricultural inputs, fast delivery, and practical support.</p>
+                    <div class="hero-btns">
+                        <a href="products.html" class="btn btn-primary">Browse products</a>
+                        <a href="#contact" class="btn btn-outline">Contact & partnerships</a>
+                    </div>
+                </div>
+                <div class="hero-slide-content" data-slide="1">
+                    <h1>From need to solution—<span class="highlight">fast, accurate, farmer-first.</span></h1>
+                    <p>Quality seeds, crop protection, animal health, and farm tools—backed by expert advisory and reliable distribution.</p>
+                    <div class="hero-btns">
+                        <a href="products.html" class="btn btn-primary">Browse products</a>
+                        <a href="#why-us" class="btn btn-outline">Why AgroSwift</a>
+                    </div>
+                </div>
+                <div class="hero-slide-content" data-slide="2">
+                    <h1>Trusted by farmers and <span class="highlight">agro-vet partners.</span></h1>
+                    <p>Verified quality, consistent stock, and swift last-mile delivery across East Africa.</p>
+                    <div class="hero-btns">
+                        <a href="impact.html" class="btn btn-primary">See our impact</a>
+                        <a href="#contact" class="btn btn-outline">Get in touch</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-dots" aria-label="Hero slide navigation">
+                <button type="button" class="hero-dot active" data-slide="0" aria-label="Go to slide 1"></button>
+                <button type="button" class="hero-dot" data-slide="1" aria-label="Go to slide 2"></button>
+                <button type="button" class="hero-dot" data-slide="2" aria-label="Go to slide 3"></button>
             </div>
         </div>
     </section>
@@ -55,116 +87,54 @@
     <!-- Trust & Credibility -->
     <section class="trust-section">
         <div class="container">
+            <div class="section-header">
+                <h2>Built on trust and reliability</h2>
+                <p>AgroSwift operates in a trust-driven ecosystem where reliability, accessibility, and real impact matter more than marketing complexity.</p>
+            </div>
             <div class="trust-grid">
                 <div class="trust-item">
                     <i class="fa-solid fa-truck-fast"></i>
-                    <h3>Fast Delivery</h3>
-                    <p>Reaching remote farms efficiently.</p>
+                    <h3>Fast regional coverage</h3>
+                    <p>Efficient last-mile distribution that reaches both remote and peri-urban farming areas.</p>
                 </div>
                 <div class="trust-item">
                     <i class="fa-solid fa-certificate"></i>
-                    <h3>Verified Quality</h3>
-                    <p>100% genuine products guaranteed.</p>
+                    <h3>Verified quality inputs</h3>
+                    <p>Genuine, approved agro-inputs sourced from trusted manufacturers and suppliers.</p>
                 </div>
                 <div class="trust-item">
                     <i class="fa-solid fa-users"></i>
-                    <h3>Farmer Trusted</h3>
-                    <p>Partnering with thousands of growers.</p>
+                    <h3>Farmer & retailer trusted</h3>
+                    <p>Serving smallholder farmers, livestock keepers, crop growers, and agro-vet outlets.</p>
                 </div>
                 <div class="trust-item">
                     <i class="fa-solid fa-handshake"></i>
-                    <h3>Expert Support</h3>
-                    <p>Agronomist advice included.</p>
+                    <h3>Proven experience</h3>
+                    <p>Seasoned team with hands-on experience in practical, field-tested agricultural solutions.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Solutions -->
-    <section id="products" class="products-section">
+    <!-- Why Us (from former About page) -->
+    <section id="why-us" class="why-us-section">
         <div class="container">
             <div class="section-header">
-                <h2>Our Agricultural Solutions</h2>
-                <p>Comprehensive inputs to support every stage of your farming journey.</p>
+                <h2>Why Choose AgroSwift</h2>
+                <p>We are a trusted partner for genuine agricultural inputs, fast delivery, and expert advisory services.</p>
             </div>
-            <div class="products-grid">
-                <!-- Product 1 -->
-                <div class="product-card">
-                    <div class="product-img placeholder-img">
-                        <i class="fa-solid fa-seedling"></i>
-                    </div>
-                    <div class="product-info">
-                        <h3>Quality Seeds</h3>
-                        <p>Certified seeds for high germination rates and disease resistance.</p>
-                        <a href="#contact" class="learn-more">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <!-- Product 2 -->
-                <div class="product-card">
-                    <div class="product-img placeholder-img">
-                        <i class="fa-solid fa-shield-virus"></i>
-                    </div>
-                    <div class="product-info">
-                        <h3>Crop Protection</h3>
-                        <p>Effective pest and disease control solutions for healthy crops.</p>
-                        <a href="#contact" class="learn-more">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <!-- Product 3 -->
-                <div class="product-card">
-                    <div class="product-img placeholder-img">
-                        <i class="fa-solid fa-cow"></i>
-                    </div>
-                    <div class="product-info">
-                        <h3>Animal Feeds</h3>
-                        <p>Nutritious feeds for faster growth and better productivity.</p>
-                        <a href="#contact" class="learn-more">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <!-- Product 4 -->
-                <div class="product-card">
-                    <div class="product-img placeholder-img">
-                        <i class="fa-solid fa-syringe"></i>
-                    </div>
-                    <div class="product-info">
-                        <h3>Animal Health</h3>
-                        <p>Vaccines and supplements to keep your livestock healthy.</p>
-                        <a href="#contact" class="learn-more">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <!-- Product 5 -->
-                <div class="product-card">
-                    <div class="product-img placeholder-img">
-                        <i class="fa-solid fa-trowel"></i>
-                    </div>
-                    <div class="product-info">
-                        <h3>Farm Tools</h3>
-                        <p>Durable equipment to make your work easier and more efficient.</p>
-                        <a href="#contact" class="learn-more">Inquire Now <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section id="about" class="why-us-section">
-        <div class="container">
             <div class="why-us-content">
                 <div class="why-us-text">
-                    <h2>Why Farmers Choose AgroSwift</h2>
-                    <p>We don't just sell products; we provide solutions that work for you.</p>
+                    <h2>Farmer-first, solution-focused</h2>
+                    <p>We don't just sell products; we provide dependable, end-to-end solutions that work in real farming conditions.</p>
                     <ul class="benefits-list">
-                        <li><i class="fa-solid fa-check-circle"></i> <strong>Reliable Availability:</strong> Stocks when
-                            you need them.</li>
-                        <li><i class="fa-solid fa-check-circle"></i> <strong>Fair Pricing:</strong> Competitive rates
-                            for better margins.</li>
-                        <li><i class="fa-solid fa-check-circle"></i> <strong>Extension Services:</strong> Guidance on
-                            best practices.</li>
-                        <li><i class="fa-solid fa-check-circle"></i> <strong>Authenticity:</strong> Zero counterfeits,
-                            guaranteed.</li>
+                        <li><i class="fa-solid fa-check-circle"></i> <strong>Reliable availability:</strong> Consistent stock so farmers and retailers can plan with confidence.</li>
+                        <li><i class="fa-solid fa-check-circle"></i> <strong>Verified product quality:</strong> Only genuine, approved products on our shelves.</li>
+                        <li><i class="fa-solid fa-check-circle"></i> <strong>Fast distribution:</strong> Swift movement of goods from store to farm gate.</li>
+                        <li><i class="fa-solid fa-check-circle"></i> <strong>Farmer-focused support:</strong> Clear usage guidance, advisory, and after-sales follow up.</li>
+                        <li><i class="fa-solid fa-check-circle"></i> <strong>Accessible pricing:</strong> Practical, competitive pricing that works in real markets.</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Join Our Network</a>
+                    <a href="#contact" class="btn btn-primary">Join our network</a>
                 </div>
                 <div class="why-us-img placeholder-img">
                     <i class="fa-solid fa-hand-holding-heart"></i>
@@ -173,25 +143,43 @@
         </div>
     </section>
 
-    <!-- Impact Section -->
-    <section id="impact" class="impact-section">
+    <!-- Quick links to key pages -->
+    <section class="products-section">
         <div class="container">
             <div class="section-header">
-                <h2>Real Impact</h2>
-                <p>Transforming agriculture one farm at a time.</p>
+                <h2>Explore AgroSwift solutions</h2>
+                <p>Quick access to products, impact stories, advisory support, and partnership opportunities.</p>
             </div>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>5000+</h3>
-                    <p>Farmers Served</p>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img placeholder-img">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>Products & inputs</h3>
+                        <p>Browse quality seeds, crop protection, animal feeds, animal health and farm tools.</p>
+                        <a href="products.html" class="learn-more">View products <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <h3>47</h3>
-                    <p>Counties Reached</p>
+                <div class="product-card">
+                    <div class="product-img placeholder-img">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>Why AgroSwift</h3>
+                        <p>See how reliability, verified quality, and farmer-focused support set us apart.</p>
+                        <a href="#why-us" class="learn-more">Why choose us <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <h3>30%</h3>
-                    <p>Yield Increase</p>
+                <div class="product-card">
+                    <div class="product-img placeholder-img">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3>Impact & reach</h3>
+                        <p>Discover the real outcomes we help create across farms and regions.</p>
+                        <a href="impact.html" class="learn-more">See impact <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -214,9 +202,12 @@
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#about">About Us</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="index.html#why-us">Why AgroSwift</a></li>
+                        <li><a href="impact.html">Impact & Stories</a></li>
+                        <li><a href="distribution.html">Distribution Network</a></li>
+                        <li><a href="advisory.html">Education & Advisory</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -224,6 +215,7 @@
                     <h3>Contact Us</h3>
                     <ul class="contact-info">
                         <li><i class="fa-solid fa-phone"></i> +254 700 000 000</li>
+                        <li><i class="fa-brands fa-whatsapp"></i> +254 700 000 000</li>
                         <li><i class="fa-solid fa-envelope"></i> info@agroswift.com</li>
                         <li><i class="fa-solid fa-location-dot"></i> Nairobi, Kenya</li>
                     </ul>
@@ -234,7 +226,7 @@
                         <input type="text" placeholder="Your Name" required>
                         <input type="email" placeholder="Your Email" required>
                         <textarea placeholder="Message" rows="2" required></textarea>
-                        <button type="submit" class="btn btn-small">Send Message</button>
+                        <button type="submit" class="btn btn-small">Send message</button>
                     </form>
                 </div>
             </div>

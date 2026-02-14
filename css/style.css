@@ -1,13 +1,39 @@
+/* ============================================
+   AgroSwift color palette — Primary #2b4424, Secondary #6b1a0f
+   Tints = white mix | Shades = black mix | AAA/AA contrast noted
+   ============================================ */
 :root {
-    --primary-color: #669543;
-    --secondary-color: #54be73;
-    --dark-color: #1f232b;
-    --light-color: #f9fafb;
+    /* Primary — forest green */
+    --primary: #2b4424;
+    --primary-tint-90: #eaece9;
+    --primary-tint-80: #d5dad3;
+    --primary-tint-60: #aab4a7;
+    --primary-tint-40: #808f7c;
+    --primary-tint-20: #556950;
+    --primary-shade-20: #22361d;
+    --primary-shade-40: #1a2916;
+
+    /* Secondary — burgundy / terracotta */
+    --secondary: #6b1a0f;
+    --secondary-tint-90: #f0e8e7;
+    --secondary-tint-80: #e1d1cf;
+    --secondary-tint-60: #c4a39f;
+    --secondary-tint-40: #a6766f;
+    --secondary-tint-20: #89483f;
+    --secondary-shade-20: #56150c;
+    --secondary-shade-40: #401009;
+
+    /* Semantic aliases (map to palette) */
+    --primary-color: var(--primary);
+    --secondary-color: var(--secondary);
+    --accent-color: #8dbf3f;
+    --dark-color: #1F1F1F;
+    --light-color: var(--primary-tint-90);
     --white: #ffffff;
-    --grey: #808080;
-    --light-grey: #f2f2f2;
+    --grey: var(--primary-tint-40);
+    --light-grey: var(--primary-tint-80);
     --transition: all 0.3s ease;
-    --font-main: 'Inter', sans-serif;
+    --font-main: 'Myriad Pro', 'Myriad', sans-serif;
 }
 
 * {
@@ -46,8 +72,13 @@ img {
 }
 
 /* Utilities */
-.text-center { text-align: center; }
-.highlight { color: var(--secondary-color); }
+.text-center {
+    text-align: center;
+}
+
+.highlight {
+    color: var(--secondary-color);
+}
 
 /* Buttons */
 .btn {
@@ -55,9 +86,9 @@ img {
     padding: 12px 28px;
     border-radius: 8px;
     font-weight: 600;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 0.5px;
+    /* text-transform: uppercase; Removed per brand guidelines (sentence case) */
+    font-size: 16px;
+    letter-spacing: 0.08em;
     cursor: pointer;
     transition: var(--transition);
 }
@@ -97,7 +128,7 @@ img {
 /* Navbar */
 .navbar {
     background-color: var(--white);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     position: fixed;
     width: 100%;
     top: 0;
@@ -114,10 +145,24 @@ img {
     width: 100%;
 }
 
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: inherit;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
 .logo {
     font-size: 24px;
     font-weight: 700;
-    color: var(--primary-color);
+    color: var(--primary);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -135,7 +180,7 @@ img {
 }
 
 .nav-link:hover {
-    color: var(--primary-color);
+    color: var(--primary);
 }
 
 .nav-link.btn-primary {
@@ -157,50 +202,113 @@ img {
     background-color: var(--dark-color);
 }
 
-/* Hero Section */
+/* Hero Section — base */
 .hero {
     height: 90vh;
-    background-color: var(--dark-color); /* Fallback */
-    /* Placeholder gradient simulating an image */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../assets/images/hero-placeholder.jpg'); /* Ensure this path is valid or remove image for pure CSS placeholder */
-    background-size: cover;
-    background-position: center;
+    min-height: 420px;
     display: flex;
     align-items: center;
     text-align: center;
     color: var(--white);
     position: relative;
-    padding-top: 70px; /* Offset for fixed header */
+    padding-top: 70px;
     margin-bottom: 50px;
 }
 
-/* Fallback for no image - Abstract Agriculture Vibe */
-.hero {
-    background: linear-gradient(135deg, #1f232b 0%, #2c3e50 100%);
-    position: relative;
+/* Subpage hero - shorter height, same visual language */
+.hero--subpage {
+    height: 320px;
+    align-items: flex-end;
+    padding-bottom: 60px;
+    margin-bottom: 40px;
+}
+
+/* Subpage hero keeps gradient (no slider) */
+.hero--subpage .hero-slider {
+    display: none;
+}
+
+.hero--subpage {
+    background: linear-gradient(135deg, var(--primary-shade-40) 0%, var(--primary-shade-20) 50%, var(--primary) 100%);
+}
+
+/* Hero slider — home page only */
+.hero--slider .hero-slider {
+    position: absolute;
+    inset: 0;
     overflow: hidden;
 }
 
-.hero::before {
-    content: '';
+.hero-slides {
     position: absolute;
-    top: 0;
+    inset: 0;
+}
+
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--primary-shade-40);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    z-index: 0;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(26, 41, 22, 0.85) 0%, rgba(34, 54, 29, 0.75) 50%, rgba(43, 68, 36, 0.7) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-content-wrap {
+    position: absolute;
+    top: 70px;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at center, rgba(102, 149, 67, 0.2) 0%, transparent 70%);
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
+.hero-slide-content {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
     max-width: 800px;
+    padding: 0 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+    text-align: center;
+}
+
+.hero-slide-content.active {
+    position: relative;
+    left: auto;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 40px;
     margin-bottom: 20px;
     line-height: 1.2;
+    font-weight: 700;
 }
 
 .hero p {
@@ -213,12 +321,57 @@ img {
     display: flex;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
-/* Trust Section */
+/* Hero dots */
+.hero-dots {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 4;
+}
+
+.hero-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: var(--transition);
+}
+
+.hero-dot:hover {
+    border-color: var(--white);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.hero-dot.active {
+    background: var(--white);
+    border-color: var(--white);
+}
+
+/* Fallback when hero images fail to load */
+.hero-slide:not([style*="background-image"]) {
+    background-image: none;
+    background-color: var(--primary-shade-40);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+/* Trust Section — light primary tint */
 .trust-section {
     padding: 40px 0;
-    background-color: var(--light-color);
+    background-color: var(--primary-tint-90);
     margin-bottom: 80px;
 }
 
@@ -235,12 +388,14 @@ img {
 
 .trust-item i {
     font-size: 40px;
-    color: var(--primary-color);
+    color: var(--primary);
     margin-bottom: 15px;
 }
 
 .trust-item h3 {
     font-size: 18px;
+    /* H3 is 24px usually, but these are small items. Keeping 18px or bumping to 20? Brand says H3=24px. Let's try 20px for these cards */
+    font-weight: 600;
     margin-bottom: 10px;
     color: var(--dark-color);
 }
@@ -261,6 +416,7 @@ img {
 
 .section-header h2 {
     font-size: 32px;
+    font-weight: 600;
     color: var(--dark-color);
     margin-bottom: 15px;
     position: relative;
@@ -272,7 +428,7 @@ img {
     display: block;
     width: 60px;
     height: 3px;
-    background-color: var(--secondary-color);
+    background-color: var(--secondary);
     margin: 10px auto 0;
 }
 
@@ -296,23 +452,30 @@ img {
     background: var(--white);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(43, 68, 36, 0.06);
     transition: var(--transition);
-    border: 1px solid var(--light-grey);
+    border: 1px solid var(--primary-tint-80);
 }
 
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .product-img {
     height: 200px;
-    background-color: var(--light-grey);
+    background-color: var(--primary-tint-90);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary-color);
+    color: var(--primary);
+    overflow: hidden;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .product-img i {
@@ -326,7 +489,9 @@ img {
 
 .product-info h3 {
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: 24px;
+    /* Brand H3 */
+    font-weight: 600;
 }
 
 .product-info p {
@@ -336,7 +501,7 @@ img {
 }
 
 .learn-more {
-    color: var(--primary-color);
+    color: var(--primary);
     font-weight: 600;
     font-size: 14px;
     display: inline-flex;
@@ -353,10 +518,61 @@ img {
     transform: translateX(5px);
 }
 
-/* Why Us Section */
+/* Gallery Section — secondary tint for warmth */
+.gallery-section {
+    padding: 40px 0 80px;
+    background-color: var(--secondary-tint-90);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.gallery-grid--single {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+}
+
+.gallery-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid var(--secondary-tint-80);
+    box-shadow: 0 5px 15px rgba(107, 26, 15, 0.04);
+}
+
+.gallery-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.gallery-card p {
+    font-size: 14px;
+    color: var(--grey);
+    margin-bottom: 16px;
+}
+
+.gallery-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.gallery-images img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Why Us Section — secondary tint for warmth */
 .why-us-section {
     padding: 80px 0;
-    background-color: var(--light-color);
+    background-color: var(--secondary-tint-90);
 }
 
 .why-us-content {
@@ -368,6 +584,7 @@ img {
 
 .why-us-text h2 {
     font-size: 32px;
+    font-weight: 600;
     margin-bottom: 20px;
     color: var(--dark-color);
 }
@@ -385,7 +602,7 @@ img {
 }
 
 .benefits-list i {
-    color: var(--secondary-color);
+    color: var(--secondary);
     margin-top: 5px;
 }
 
@@ -396,24 +613,24 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .why-us-img i {
     font-size: 100px;
-    color: var(--primary-color);
+    color: var(--primary);
     opacity: 0.3;
 }
 
-/* Impact Section */
+/* Impact Section — primary base */
 .impact-section {
     padding: 80px 0;
-    background-color: var(--primary-color);
+    background-color: var(--primary);
     color: var(--white);
     text-align: center;
 }
 
-.impact-section .section-header h2, 
+.impact-section .section-header h2,
 .impact-section .section-header p {
     color: var(--white);
 }
@@ -441,10 +658,116 @@ img {
     opacity: 0.9;
 }
 
-/* Footer */
+/* Impact stories */
+.impact-stories {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.impact-card {
+    background-color: var(--primary-shade-20);
+    border-radius: 10px;
+    padding: 20px 18px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.impact-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.impact-card p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Distribution Section — white with primary-tint borders */
+.distribution-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.distribution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.distribution-card {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: var(--primary-tint-90);
+    border: 1px solid var(--primary-tint-80);
+}
+
+.distribution-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.distribution-card p {
+    font-size: 14px;
+    color: var(--grey);
+}
+
+.distribution-cta {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Advisory Section — light primary tint */
+.advisory-section {
+    padding: 80px 0;
+    background-color: var(--primary-tint-90);
+}
+
+.advisory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.advisory-card {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: var(--white);
+    border: 1px solid var(--primary-tint-80);
+}
+
+.advisory-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.advisory-card p {
+    font-size: 14px;
+    color: var(--grey);
+}
+
+.advisory-note {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--grey);
+}
+
+.advisory-note a {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Footer — deep primary green (shade-40) */
 .footer {
-    background-color: var(--dark-color);
-    color: #aeaeae;
+    background-color: var(--primary-shade-40);
+    color: var(--primary-tint-60);
     padding: 70px 0 20px;
 }
 
@@ -475,7 +798,7 @@ img {
 .social-links a {
     width: 35px;
     height: 35px;
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -485,7 +808,7 @@ img {
 }
 
 .social-links a:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary);
 }
 
 .footer-col ul li {
@@ -493,12 +816,12 @@ img {
 }
 
 .footer-col ul li a {
-    color: #aeaeae;
+    color: var(--primary-tint-60);
     font-size: 14px;
 }
 
 .footer-col ul li a:hover {
-    color: var(--secondary-color);
+    color: var(--secondary-tint-40);
     padding-left: 5px;
 }
 
@@ -510,7 +833,7 @@ img {
 }
 
 .contact-info i {
-    color: var(--secondary-color);
+    color: var(--secondary-tint-40);
     margin-top: 5px;
 }
 
@@ -519,21 +842,26 @@ img {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    background-color: var(--primary-shade-20);
+    border: 1px solid var(--primary-tint-40);
     border-radius: 4px;
     color: var(--white);
     font-family: inherit;
 }
 
+.footer-form input::placeholder,
+.footer-form textarea::placeholder {
+    color: var(--primary-tint-60);
+}
+
 .footer-form input:focus,
 .footer-form textarea:focus {
     outline: none;
-    border-color: var(--secondary-color);
+    border-color: var(--secondary-tint-40);
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid var(--primary-shade-20);
     padding-top: 20px;
     text-align: center;
     font-size: 13px;
@@ -541,13 +869,24 @@ img {
 
 /* Responsive */
 @media (max-width: 991px) {
-    .hero h1 { font-size: 42px; }
-    .why-us-content { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .why-us-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 768px) {
-    .menu-toggle { display: block; }
+    .menu-toggle {
+        display: block;
+    }
+
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -557,19 +896,39 @@ img {
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
         padding: 20px 0;
     }
 
-    .nav-menu.active { left: 0; }
-    
-    .nav-menu li { margin: 15px 0; }
-    
-    .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
-    .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    .nav-menu.active {
+        left: 0;
+    }
 
-    .hero h1 { font-size: 32px; }
-    .stats-grid { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr; }
+    .nav-menu li {
+        margin: 15px 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
 }
