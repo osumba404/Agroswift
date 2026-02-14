@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why AgroSwift · concept 04 (refined)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Primary — forest green */
+            --primary: #2b4424;
+            --primary-tint-90: #eaece9;
+            --primary-tint-80: #d5dad3;
+            --primary-tint-60: #aab4a7;
+            --primary-tint-40: #808f7c;
+            --primary-tint-20: #556950;
+            --primary-shade-20: #22361d;
+            --primary-shade-40: #1a2916;
+
+            /* Secondary — burgundy / terracotta */
+            --secondary: #6b1a0f;
+            --secondary-tint-90: #f0e8e7;
+            --secondary-tint-80: #e1d1cf;
+            --secondary-tint-60: #c4a39f;
+            --secondary-tint-40: #a6766f;
+            --secondary-tint-20: #89483f;
+            --secondary-shade-20: #56150c;
+            --secondary-shade-40: #401009;
+
+            /* Accent & neutrals */
+            --accent-color: #8dbf3f;
+            --dark-color: #1F1F1F;
+            --light-color: var(--primary-tint-90);
+            --white: #ffffff;
+            --grey: var(--primary-tint-40);
+            --light-grey: var(--primary-tint-80);
+            --transition: all 0.25s ease;
+            --font-main: 'Myriad Pro', 'Myriad', 'Segoe UI', Roboto, system-ui, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background: var(--primary-tint-90);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        /* main component container — selected concept 04 */
+        .why-agroswift {
+            max-width: 1280px;
+            width: 100%;
+            background: var(--white);
+            border-radius: 3rem;
+            box-shadow: 0 35px 50px -25px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        /* inner flex layout (image right / text left) */
+        .why-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 2.5rem 2.5rem 2.5rem 3rem;
+        }
+
+        /* left text panel */
+        .text-panel {
+            flex: 1 1 50%;
+        }
+
+        .pre-title {
+            display: inline-block;
+            background: var(--secondary-tint-20);
+            color: var(--white);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            padding: 0.3rem 1.4rem;
+            border-radius: 40px;
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+            border: 1px solid var(--secondary-tint-40);
+        }
+
+        .text-panel h2 {
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 500;
+            color: var(--primary-shade-40);
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .text-panel h2 span {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            color: var(--primary-tint-20);
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--secondary);
+            padding-left: 1.5rem;
+        }
+
+        /* checklist — icon style from concept 04 */
+        .trust-list {
+            list-style: none;
+            margin: 2rem 0 2.5rem;
+        }
+
+        .trust-list li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.18rem;
+            margin-bottom: 1.2rem;
+            color: var(--dark-color);
+            font-weight: 400;
+        }
+
+        .trust-list li::before {
+            content: "✓";
+            background: var(--accent-color);
+            color: var(--primary-shade-40);
+            font-weight: 700;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 8px rgba(141, 191, 63, 0.3);
+        }
+
+        /* right image panel */
+        .image-panel {
+            flex: 1 1 45%;
+            position: relative;
+        }
+
+        .feature-image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            max-height: 500px;
+            border-radius: 2.5rem;
+            background-size: cover;
+            background-position: center;
+            background-color: var(--secondary-tint-60);
+            box-shadow: -25px 25px 0 var(--primary-tint-40);
+            transition: transform 0.3s ease;
+            /* image composition using palette + abstract farm elements */
+            background-image: 
+                linear-gradient(145deg, rgba(43,68,36,0.2), rgba(107,26,15,0.3)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="500" height="500"><rect width="400" height="400" fill="%232b4424"/><path d="M0 250 L400 200 L400 400 L0 400Z" fill="%236b1a0f" opacity="0.8"/><circle cx="100" cy="150" r="35" fill="%238dbf3f" opacity="0.7"/><circle cx="280" cy="200" r="55" fill="%23aab4a7" opacity="0.6"/><path d="M50 320 L150 280 L220 350 L320 300" stroke="%23ffffff" stroke-width="8" fill="none" opacity="0.5"/></svg>');
+            background-blend-mode: overlay;
+        }
+
+        .feature-image:hover {
+            transform: translate(5px, -5px);
+            box-shadow: -30px 30px 0 var(--primary-tint-20);
+        }
+
+        /* small caption / trust badge */
+        .badge-note {
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-tint-40);
+            font-size: 0.9rem;
+        }
+
+        .badge-note span {
+            background: var(--primary-tint-80);
+            padding: 0.2rem 1rem;
+            border-radius: 60px;
+            color: var(--primary-shade-40);
+        }
+
+        /* responsive */
+        @media (max-width: 850px) {
+            .why-content {
+                flex-direction: column-reverse;
+                padding: 2rem;
+            }
+            .image-panel {
+                width: 100%;
+            }
+            .feature-image {
+                box-shadow: 0 20px 0 var(--primary-tint-40);
+                max-height: 380px;
+            }
+            .trust-list li {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .why-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="why-agroswift">
+        <div class="why-content">
+            <!-- left side: text + checklist (icons) -->
+            <div class="text-panel">
+                <span class="pre-title">farmer-first, solution-focused</span>
+                <h2>Why choose <span>AgroSwift</span></h2>
+                <p class="lead">We are a trusted partner for genuine agricultural inputs, fast delivery, and expert advisory services.</p>
+                
+                <!-- the five pillars with checkmark icons (concept 04 style) -->
+                <ul class="trust-list">
+                    <li><strong>Reliable availability:</strong> Consistent stock so farmers and retailers can plan with confidence.</li>
+                    <li><strong>Verified product quality:</strong> Only genuine, approved products on our shelves.</li>
+                    <li><strong>Fast distribution:</strong> Swift movement of goods from store to farm gate.</li>
+                    <li><strong>Farmer-focused support:</strong> Clear usage guidance, advisory, and after-sales follow up.</li>
+                    <li><strong>Accessible pricing:</strong> Practical, competitive pricing that works in real markets.</li>
+                </ul>
+
+                <div class="badge-note">
+                    <span>🌱 5 pillars</span> built for real farming conditions
+                </div>
+            </div>
+
+            <!-- right side: distinctive image with offset shadow -->
+            <div class="image-panel">
+                <div class="feature-image" role="img" aria-label="vibrant farm field with fresh produce"></div>
+                <!-- subtle decorative element (floating icon) -->
+                <div style="position: absolute; bottom: -10px; left: -10px; background: var(--accent-color); width: 70px; height: 70px; border-radius: 50%; filter: blur(25px); opacity: 0.4; z-index: 0;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- simple note: concept 04 selected and refined -->
+    <div style="position: fixed; bottom: 15px; right: 25px; background: var(--primary); color: white; padding: 0.3rem 1.3rem; border-radius: 60px; font-size: 0.8rem; box-shadow: 0 5px 10px rgba(0,0,0,0.2);">✅ concept 04 · bulletproof benefits</div>
+</body>
+</html>

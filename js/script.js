@@ -1,21 +1,56 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle — popup from right (75% width), backdrop
     const mobileMenuBtn = document.getElementById('mobile-menu');
-    const navMenu = document.querySelector('.nav-menu');
+    const navMenu = document.getElementById('nav-menu');
+    const navBackdrop = document.getElementById('nav-backdrop');
+
+    function openMenu() {
+        if (navMenu) navMenu.classList.add('active');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.classList.add('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            mobileMenuBtn.setAttribute('aria-label', 'Close menu');
+        }
+        if (navBackdrop) {
+            navBackdrop.classList.add('is-visible');
+            navBackdrop.setAttribute('aria-hidden', 'false');
+        }
+        document.body.classList.add('nav-menu-open');
+    }
+
+    function closeMenu() {
+        if (navMenu) navMenu.classList.remove('active');
+        if (mobileMenuBtn) {
+            mobileMenuBtn.classList.remove('active');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            mobileMenuBtn.setAttribute('aria-label', 'Open menu');
+        }
+        if (navBackdrop) {
+            navBackdrop.classList.remove('is-visible');
+            navBackdrop.setAttribute('aria-hidden', 'true');
+        }
+        document.body.classList.remove('nav-menu-open');
+    }
 
     if (mobileMenuBtn && navMenu) {
         mobileMenuBtn.addEventListener('click', function() {
-            mobileMenuBtn.classList.toggle('active');
-            navMenu.classList.toggle('active');
+            if (navMenu.classList.contains('active')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
         });
+    }
+
+    if (navBackdrop) {
+        navBackdrop.addEventListener('click', closeMenu);
     }
 
     // Close menu when clicking a link
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            if (mobileMenuBtn) mobileMenuBtn.classList.remove('active');
-            if (navMenu) navMenu.classList.remove('active');
+            closeMenu();
         });
     });
 

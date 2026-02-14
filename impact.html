@@ -22,19 +22,27 @@
                 <img src="assets/images/logo/agroswift_logo.png" alt="AgroSwift" class="logo-img" onerror="this.style.display='none'">
                 <span class="logo">AgroSwift</span>
             </a>
-            <div class="menu-toggle" id="mobile-menu">
+            <button type="button" class="menu-toggle" id="mobile-menu" aria-label="Open menu" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
+            </button>
+            <div class="nav-menu" id="nav-menu">
+                <div class="nav-menu-card">
+                    <ul class="nav-menu-list">
+                        <li class="nav-menu-element"><a href="index.html" class="nav-link"><i class="fa-solid fa-house nav-icon"></i><span class="nav-label">Home</span></a></li>
+                        <li class="nav-menu-element"><a href="products.html" class="nav-link"><i class="fa-solid fa-boxes-stacked nav-icon"></i><span class="nav-label">Products</span></a></li>
+                        <li class="nav-menu-element"><a href="impact.html" class="nav-link"><i class="fa-solid fa-chart-line nav-icon"></i><span class="nav-label">Impact</span></a></li>
+                        <li class="nav-menu-element"><a href="distribution.html" class="nav-link"><i class="fa-solid fa-truck-fast nav-icon"></i><span class="nav-label">Distribution</span></a></li>
+                    </ul>
+                    <div class="nav-menu-separator"></div>
+                    <ul class="nav-menu-list">
+                        <li class="nav-menu-element nav-menu-element--cta"><a href="index.html#contact" class="nav-link nav-link--cta"><i class="fa-solid fa-envelope nav-icon"></i><span class="nav-label">Contact us</span></a></li>
+                    </ul>
+                </div>
             </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="products.html" class="nav-link">Products</a></li>
-                <li><a href="impact.html" class="nav-link">Impact</a></li>
-                <li><a href="distribution.html" class="nav-link">Distribution</a></li>
-                <li><a href="advisory.html" class="nav-link">Advisory</a></li>
-            </ul>
         </div>
+        <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
     </nav>
 
     <section class="hero hero--subpage">

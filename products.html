@@ -22,19 +22,27 @@
                 <img src="assets/images/logo/agroswift_logo.png" alt="AgroSwift" class="logo-img" onerror="this.style.display='none'">
                 <span class="logo">AgroSwift</span>
             </a>
-            <div class="menu-toggle" id="mobile-menu">
+            <button type="button" class="menu-toggle" id="mobile-menu" aria-label="Open menu" aria-expanded="false">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
+            </button>
+            <div class="nav-menu" id="nav-menu">
+                <div class="nav-menu-card">
+                    <ul class="nav-menu-list">
+                        <li class="nav-menu-element"><a href="index.html" class="nav-link"><i class="fa-solid fa-house nav-icon"></i><span class="nav-label">Home</span></a></li>
+                        <li class="nav-menu-element"><a href="products.html" class="nav-link"><i class="fa-solid fa-boxes-stacked nav-icon"></i><span class="nav-label">Products</span></a></li>
+                        <li class="nav-menu-element"><a href="impact.html" class="nav-link"><i class="fa-solid fa-chart-line nav-icon"></i><span class="nav-label">Impact</span></a></li>
+                        <li class="nav-menu-element"><a href="distribution.html" class="nav-link"><i class="fa-solid fa-truck-fast nav-icon"></i><span class="nav-label">Distribution</span></a></li>
+                    </ul>
+                    <div class="nav-menu-separator"></div>
+                    <ul class="nav-menu-list">
+                        <li class="nav-menu-element nav-menu-element--cta"><a href="index.html#contact" class="nav-link nav-link--cta"><i class="fa-solid fa-envelope nav-icon"></i><span class="nav-label">Contact us</span></a></li>
+                    </ul>
+                </div>
             </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="products.html" class="nav-link">Products</a></li>
-                <li><a href="impact.html" class="nav-link">Impact</a></li>
-                <li><a href="distribution.html" class="nav-link">Distribution</a></li>
-                <li><a href="advisory.html" class="nav-link">Advisory</a></li>              
-            </ul>
         </div>
+        <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
     </nav>
 
     <section class="hero hero--subpage">
@@ -115,77 +123,108 @@
         </div>
     </section>
 
-    <!-- Section 1: Poultry — Hatchery & bird farm -->
-    <section class="gallery-section gallery-section--poultry" id="hatchery-bird-farm">
+    <!-- Section 1: Hatchery & bird farm — farmstead cards -->
+    <section class="gallery-section farmstead-section" id="hatchery-bird-farm">
         <div class="container">
-            <div class="section-header">
-                <h2>Hatchery & bird farm</h2>
+            <div class="section-header section-header--farmstead">
+                <h2>Hatchery & bird farm <span>01</span></h2>
                 <p>Our poultry operations: day-old chicks, broilers, and layers in clean, well-managed housing.</p>
             </div>
-            <div class="gallery-grid gallery-grid--single">
-                <div class="gallery-card">
-                    <div class="gallery-images">
-                        <img src="assets/images/poultry/poultry-1.jpg" alt="Poultry house or hatchery">
-                        <img src="assets/images/poultry/poultry-2.jpg" alt="Bird farm flock">
-                        <img src="assets/images/poultry/poultry-3.jpg" alt="Hatchery or healthy birds">
+            <div class="farmstead-grid">
+                <div class="farm-card">
+                    <div class="card-image card-image--img" style="background-image: url('assets/images/poultry/poultry-1.jpg');"></div>
+                    <div class="card-content">
+                        <div class="product-category">poultry · housing</div>
+                        <h3>Poultry house & hatchery</h3>
+                        <p class="product-desc">Day-old chicks, broilers, and layers in clean, well-managed housing.</p>
+                    </div>
+                </div>
+                <div class="farm-card">
+                    <div class="card-image card-image--img" style="background-image: url('assets/images/poultry/poultry-2.jpg');"></div>
+                    <div class="card-content">
+                        <div class="product-category">flock · managed</div>
+                        <h3>Bird farm flock</h3>
+                        <p class="product-desc">Healthy flocks in controlled environments for consistent quality.</p>
+                    </div>
+                </div>
+                <div class="farm-card">
+                    <div class="card-image card-image--img" style="background-image: url('assets/images/poultry/poultry-3.jpg');"></div>
+                    <div class="card-content">
+                        <div class="product-category">hatchery · quality</div>
+                        <h3>Hatchery & healthy birds</h3>
+                        <p class="product-desc">Hatchery operations and healthy bird stock for farmers and partners.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 2: Ranch — Bulls & dairy cattle -->
-    <section class="gallery-section gallery-section--ranch" id="ranch">
+    <!-- Section 2: Ranch — farmstead cards -->
+    <section class="gallery-section farmstead-section" id="ranch">
         <div class="container">
-            <div class="section-header">
-                <h2>Ranch</h2>
+            <div class="section-header section-header--farmstead">
+                <h2>Ranch <span>02</span></h2>
                 <p>Beef and dairy cattle: bulls and dairy cows that represent our ranch operations.</p>
             </div>
-            <div class="gallery-grid gallery-grid--single">
-                <div class="gallery-card">
-                    <div class="gallery-images">
-                        <img src="assets/images/ranch/ranch-1.jpg" alt="Bulls or beef cattle">
-                        <img src="assets/images/ranch/ranch-2.jpg" alt="Dairy cow or dairy unit">
-                        <img src="assets/images/ranch/ranch-3.jpg" alt="Ranch herd or pasture">
+            <div class="farmstead-grid">
+                <div class="farm-card">
+                    <div class="card-image card-image--img" style="background-image: url('assets/images/ranch/ranch-1.jpg');"></div>
+                    <div class="card-content">
+                        <div class="product-category">beef · cattle</div>
+                        <h3>Bulls & beef cattle</h3>
+                        <p class="product-desc">Beef and dairy cattle that represent our ranch operations.</p>
+                    </div>
+                </div>
+                <div class="farm-card">
+                    <div class="card-image card-image--img" style="background-image: url('assets/images/ranch/ranch-2.jpg');"></div>
+                    <div class="card-content">
+                        <div class="product-category">dairy · unit</div>
+                        <h3>Dairy cow & dairy unit</h3>
+                        <p class="product-desc">Dairy animals and modern dairy unit management.</p>
+                    </div>
+                </div>
+                <div class="farm-card">
+                    <div class="card-image card-image--img" style="background-image: url('assets/images/ranch/ranch-3.jpg');"></div>
+                    <div class="card-content">
+                        <div class="product-category">ranch · pasture</div>
+                        <h3>Ranch herd & pasture</h3>
+                        <p class="product-desc">Herd and pasture operations across our ranch.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 3: Agrovet — Incubators, footwear, bird cage -->
-    <section class="gallery-section gallery-section--agrovet" id="agrovet">
+    <!-- Section 3: Agrovet — farmstead cards -->
+    <section class="gallery-section farmstead-section" id="agrovet">
         <div class="container">
-            <div class="section-header">
-                <h2>Agrovet</h2>
+            <div class="section-header section-header--farmstead">
+                <h2>Agrovet <span>03</span></h2>
                 <p>Incubators, protective footwear, and bird cages that support everyday farm work.</p>
             </div>
-            <div class="gallery-grid gallery-grid--single">
-                <div class="gallery-card">
-                    <div class="gallery-images">
-                        <img src="assets/images/agrovet/A type cage.jpeg" alt="Incubators in agrovet outlet">
-                        <img src="assets/images/agrovet/Agrovet-ET.jpg" alt="Protective farm footwear">
-                        <img src="assets/images/agrovet/Bird basket.png" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Bird cage.png" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Bird Cage2.jpg" alt="Bird cages and accessories">       
-                        <img src="assets/images/agrovet/Boots1.jpg" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Boots2.jpg" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Boots3.jpg" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Calf drinker.png" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Cryo Tanks.jpg drinker2.jpg" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Drinker3.jpg feeder.jpg" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Drinkers1.png feeder.jpg" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Incubator 528 egg.png feeder2.jpg" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Incubator Solar Package.png feeder3.jpg" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Incubator1.png feeder4.jpg" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Incubator3.png feeder5.jpg" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Incubator4.png feeder6.jpg" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Incubator5.png feeder7.jpg" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Incubator6.png feeder8.jpg" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Incubator7.png feeder9.jpg" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Incubator8.png feeder10.jpg" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Incubator9.png feeder11.jpg" alt="Bird cages and accessories">
-                        <img src="assets/images/agrovet/Incubator10.png feeder12.jpg" alt="Bird cages and accessories">
+            <div class="farmstead-grid">
+                <div class="farm-card">
+                    <div class="card-image card-image--img" style="background-image: url('assets/images/agrovet/Incubator1.png');"></div>
+                    <div class="card-content">
+                        <div class="product-category">equipment · incubation</div>
+                        <h3>Incubators</h3>
+                        <p class="product-desc">Incubators for hatchery and farm use, available at our agrovet outlets.</p>
+                    </div>
+                </div>
+                <div class="farm-card">
+                    <div class="card-image card-image--img" style="background-image: url('assets/images/agrovet/Boots1.jpg');"></div>
+                    <div class="card-content">
+                        <div class="product-category">safety · footwear</div>
+                        <h3>Protective farm footwear</h3>
+                        <p class="product-desc">Protective footwear and safety gear for everyday farm work.</p>
+                    </div>
+                </div>
+                <div class="farm-card">
+                    <div class="card-image card-image--img" style="background-image: url('assets/images/agrovet/Bird cage.png');"></div>
+                    <div class="card-content">
+                        <div class="product-category">housing · accessories</div>
+                        <h3>Bird cages & accessories</h3>
+                        <p class="product-desc">Bird cages and housing accessories that support poultry keepers.</p>
                     </div>
                 </div>
             </div>
