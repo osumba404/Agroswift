@@ -755,6 +755,64 @@ img {
 }
 
 /* Welcome to Agroswift */
+/* Decorative agriculture icons — sprinkled across sections */
+.section-deco {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-deco .container,
+.section-deco .about-agroswift-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.deco-icon {
+    position: absolute;
+    color: var(--primary);
+    opacity: 0.11;
+    pointer-events: none;
+    z-index: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.section-deco:hover .deco-icon {
+    opacity: 0.16;
+}
+
+.deco-icon i {
+    display: block;
+}
+
+/* Welcome */
+.deco-icon--leaf { top: 2rem; right: 8%; font-size: clamp(2.5rem, 5vw, 4rem); transform: rotate(-15deg); }
+.deco-icon--wheat { bottom: 3rem; left: 5%; font-size: clamp(2rem, 4vw, 3rem); transform: rotate(8deg); }
+.deco-icon--seedling { top: 50%; right: 2%; font-size: clamp(1.8rem, 3.5vw, 2.5rem); transform: rotate(12deg); }
+
+/* Trust */
+.deco-icon--tractor { top: 1.5rem; left: 6%; font-size: clamp(2.2rem, 4vw, 3.2rem); transform: rotate(-8deg); }
+.deco-icon--sun { bottom: 2rem; right: 10%; font-size: clamp(2rem, 3.5vw, 2.8rem); transform: rotate(5deg); }
+
+/* About */
+.deco-icon--apple { top: 3rem; right: 4%; font-size: clamp(2rem, 3.5vw, 2.6rem); transform: rotate(-20deg); }
+.deco-icon--basket { bottom: 4rem; left: 8%; font-size: clamp(2.5rem, 4vw, 3.2rem); transform: rotate(10deg); }
+.deco-icon--droplet { top: 45%; left: 2%; font-size: clamp(1.6rem, 3vw, 2.2rem); transform: rotate(-5deg); }
+
+/* Why Us */
+.deco-icon--tree { top: 2rem; right: 12%; font-size: clamp(2.8rem, 5vw, 3.8rem); transform: rotate(3deg); }
+.deco-icon--hand-seed { bottom: 2rem; left: 5%; font-size: clamp(2rem, 3.5vw, 2.6rem); transform: rotate(-12deg); }
+
+/* Explore */
+.deco-icon--earth { top: 1.5rem; left: 7%; font-size: clamp(2.4rem, 4vw, 3.2rem); transform: rotate(-6deg); }
+.deco-icon--carrot { bottom: 2.5rem; right: 6%; font-size: clamp(1.8rem, 3vw, 2.4rem); transform: rotate(15deg); }
+
+@media (max-width: 768px) {
+    .deco-icon { opacity: 0.08; }
+    .section-deco:hover .deco-icon { opacity: 0.12; }
+    .deco-icon--seedling,
+    .deco-icon--droplet { display: none; }
+}
+
 .welcome-section {
     padding: 4rem 0 4.5rem;
     background: linear-gradient(180deg, var(--white) 0%, var(--primary-tint-97) 100%);
@@ -814,11 +872,24 @@ img {
 }
 
 .welcome-block {
-    padding: 1.25rem 1.5rem;
+    padding: 1.5rem 1.75rem;
     background: var(--white);
     border-radius: 12px;
     border-left: 4px solid var(--primary);
-    box-shadow: 0 2px 12px rgba(43, 68, 36, 0.06);
+    box-shadow: 0 4px 20px rgba(43, 68, 36, 0.06);
+}
+
+.welcome-block-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 0.75rem;
+    background: var(--primary-tint-92);
+    color: var(--primary);
+    border-radius: 10px;
+    font-size: 1.15rem;
 }
 
 .welcome-block h3 {
@@ -835,33 +906,43 @@ img {
     margin: 0;
 }
 
-/* Trust Section — light primary tint */
+/* Trust Section — matches impact/distribution card style */
 .trust-section {
-    padding: 40px 0;
-    background-color: var(--primary-tint-90);
-    margin-bottom: 80px;
+    padding: 4rem 0;
+    background: linear-gradient(180deg, var(--primary-tint-92) 0%, var(--secondary-tint-94) 100%);
+    margin-bottom: 0;
+    border-top: 1px solid var(--primary-tint-85);
+}
+
+.trust-section .section-header {
+    margin-bottom: 2rem;
+}
+
+.trust-section .section-header h2 {
+    color: var(--primary-shade-40);
+}
+
+.trust-section .section-header p {
+    color: var(--primary-tint-25);
 }
 
 .trust-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 30px;
-    text-align: center;
+    gap: 2rem;
 }
 
 .trust-item {
     padding: 0;
 }
 
-/* Gradient border wrapper (Uiverse-style, site colours) */
 .trust-card-border {
-    background: linear-gradient(135deg, var(--primary-tint-90) 0%, var(--primary) 50%, var(--primary-tint-60) 100%);
-    padding: 1px;
-    border-radius: 1.2rem;
-    box-shadow: 0 1rem 1.5rem -0.9rem rgba(26, 41, 22, 0.35);
+    padding: 3px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--primary-tint-60), var(--primary), var(--primary-shade-20));
     height: 100%;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
-    animation: trustCardReveal 0.6s ease backwards;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    animation: trustCardReveal 0.5s ease backwards;
 }
 
 .trust-item:nth-child(1) .trust-card-border { animation-delay: 0.05s; }
@@ -871,13 +952,13 @@ img {
 
 .trust-card-border:hover {
     transform: translateY(-6px);
-    box-shadow: 0 1.25rem 2rem -0.75rem rgba(26, 41, 22, 0.45);
+    box-shadow: 0 16px 40px rgba(43, 68, 36, 0.15);
 }
 
 @keyframes trustCardReveal {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(16px);
     }
     to {
         opacity: 1;
@@ -886,46 +967,163 @@ img {
 }
 
 .trust-card-inner {
-    background: linear-gradient(135deg, var(--primary-shade-40) 0%, var(--primary-shade-20) 43%, var(--primary-shade-40) 100%);
-    padding: 1.5rem;
-    border-radius: calc(1.2rem - 1px);
+    background: var(--white);
+    padding: 2rem 1.5rem;
+    border-radius: 14px;
     height: 100%;
     min-height: 100%;
     box-sizing: border-box;
-    transition: background 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 }
 
-.trust-card-border:hover .trust-card-inner {
-    background: linear-gradient(135deg, var(--primary-shade-20) 0%, var(--primary) 43%, var(--primary-shade-20) 100%);
+.trust-card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 1rem;
+    background: var(--primary-tint-92);
+    color: var(--primary);
+    border-radius: 12px;
+    font-size: 1.35rem;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
-.trust-item i,
-.trust-card-inner i {
-    font-size: 40px;
-    color: var(--primary-tint-60);
-    margin-bottom: 15px;
-    display: block;
-    transition: color 0.3s ease, transform 0.3s ease;
+.trust-card-border:hover .trust-card-icon {
+    background: var(--primary);
+    color: var(--white);
+    transform: scale(1.05);
 }
 
-.trust-card-border:hover .trust-card-inner i {
-    color: var(--accent-color);
-    transform: scale(1.08);
-}
-
-.trust-item h3,
 .trust-card-inner h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 10px;
-    color: var(--primary-tint-90);
+    margin-bottom: 0.5rem;
+    color: var(--primary-shade-40);
 }
 
-.trust-item p,
 .trust-card-inner p {
-    font-size: 0.9rem;
-    color: var(--primary-tint-60);
+    font-size: 0.95rem;
+    color: var(--primary-tint-25);
     line-height: 1.5;
+    margin: 0;
+}
+
+/* Explore section — home page solution cards (matches impact/distribution) */
+.explore-section {
+    padding: 4rem 0 5rem;
+    background: linear-gradient(180deg, var(--white) 0%, var(--primary-tint-97) 100%);
+    border-top: 1px solid var(--primary-tint-88);
+}
+
+.explore-section .section-header--explore {
+    margin-bottom: 2rem;
+}
+
+.explore-section .section-header--explore h2 {
+    color: var(--primary-shade-40);
+}
+
+.explore-section .section-header--explore p {
+    color: var(--primary-tint-25);
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.explore-card {
+    padding: 0;
+}
+
+.explore-card-border {
+    padding: 3px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--primary-tint-70), var(--primary), var(--secondary-tint-60));
+    height: 100%;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.explore-card-border:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(43, 68, 36, 0.15);
+}
+
+.explore-card-inner {
+    background: var(--white);
+    padding: 2rem 1.5rem;
+    border-radius: 14px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.explore-card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 1rem;
+    background: var(--primary-tint-92);
+    color: var(--primary);
+    border-radius: 12px;
+    font-size: 1.35rem;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.explore-card-border:hover .explore-card-icon {
+    background: var(--primary);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.explore-card-inner h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--primary-shade-40);
+}
+
+.explore-card-inner p {
+    font-size: 0.95rem;
+    color: var(--primary-tint-25);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex: 1;
+}
+
+.explore-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-top: auto;
+    transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.explore-link:hover {
+    color: var(--primary-shade-20);
+    gap: 0.6rem;
+}
+
+.explore-link i {
+    font-size: 0.8rem;
+    transition: transform 0.2s ease;
+}
+
+.explore-link:hover i {
+    transform: translateX(4px);
 }
 
 /* Section Header */
