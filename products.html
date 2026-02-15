@@ -389,6 +389,18 @@
         </div>
     </footer>
 
+    <!-- Image lightbox popup -->
+    <div class="lightbox" id="product-lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
+        <div class="lightbox-backdrop"></div>
+        <button type="button" class="lightbox-close" aria-label="Close"><i class="fa-solid fa-times"></i></button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <button type="button" class="lightbox-prev" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+            <button type="button" class="lightbox-next" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <div class="lightbox-counter" id="lightbox-counter"></div>
+    </div>
+
     <script src="js/script.js"></script>
 </body>
 

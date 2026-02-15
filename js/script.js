@@ -211,6 +211,95 @@ document.addEventListener('DOMContentLoaded', function() {
         startAutoplay();
     });
 
+    // Product image lightbox: click image to open popup with prev/next
+    var lightbox = document.getElementById('product-lightbox');
+    if (lightbox) {
+        var lightboxImg = document.getElementById('lightbox-img');
+        var lightboxCounter = document.getElementById('lightbox-counter');
+        var lightboxBackdrop = lightbox.querySelector('.lightbox-backdrop');
+        var lightboxClose = lightbox.querySelector('.lightbox-close');
+        var lightboxPrev = lightbox.querySelector('.lightbox-prev');
+        var lightboxNext = lightbox.querySelector('.lightbox-next');
+
+        var lightboxImages = [];
+        var lightboxIndex = 0;
+
+        function openLightbox(images, index) {
+            lightboxImages = images;
+            lightboxIndex = index >= 0 && index < images.length ? index : 0;
+            lightbox.classList.add('is-open');
+            lightbox.setAttribute('aria-hidden', 'false');
+            if (lightboxImages.length <= 1) {
+                lightbox.classList.add('lightbox--single');
+                if (lightboxCounter) lightboxCounter.textContent = '';
+            } else {
+                lightbox.classList.remove('lightbox--single');
+                if (lightboxCounter) lightboxCounter.textContent = (lightboxIndex + 1) + ' / ' + lightboxImages.length;
+            }
+            updateLightboxImage();
+            document.body.classList.add('lightbox-open');
+        }
+
+        function updateLightboxImage() {
+            if (!lightboxImg || !lightboxImages.length) return;
+            var item = lightboxImages[lightboxIndex];
+            lightboxImg.src = item.src;
+            lightboxImg.alt = item.alt || '';
+            if (lightboxCounter && lightboxImages.length > 1) {
+                lightboxCounter.textContent = (lightboxIndex + 1) + ' / ' + lightboxImages.length;
+            }
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('is-open');
+            lightbox.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('lightbox-open');
+        }
+
+        function lightboxGoPrev() {
+            if (lightboxImages.length <= 1) return;
+            lightboxIndex = (lightboxIndex - 1 + lightboxImages.length) % lightboxImages.length;
+            updateLightboxImage();
+        }
+
+        function lightboxGoNext() {
+            if (lightboxImages.length <= 1) return;
+            lightboxIndex = (lightboxIndex + 1) % lightboxImages.length;
+            updateLightboxImage();
+        }
+
+        document.addEventListener('click', function(e) {
+            var img = e.target.closest('.farmstead-section .card-carousel-slide img');
+            if (!img) return;
+            e.preventDefault();
+            var carousel = img.closest('.card-carousel');
+            if (!carousel) return;
+            var slides = carousel.querySelectorAll('.card-carousel-slide');
+            var images = [];
+            var index = 0;
+            slides.forEach(function(slide, i) {
+                var im = slide.querySelector('img');
+                if (im) {
+                    images.push({ src: im.src, alt: im.alt || '' });
+                    if (im === img) index = i;
+                }
+            });
+            if (images.length) openLightbox(images, index);
+        });
+
+        if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+        if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+        if (lightboxPrev) lightboxPrev.addEventListener('click', function(e) { e.stopPropagation(); lightboxGoPrev(); });
+        if (lightboxNext) lightboxNext.addEventListener('click', function(e) { e.stopPropagation(); lightboxGoNext(); });
+
+        document.addEventListener('keydown', function(e) {
+            if (!lightbox.classList.contains('is-open')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') lightboxGoPrev();
+            if (e.key === 'ArrowRight') lightboxGoNext();
+        });
+    }
+
     // Footer Send Inquiry: open mailto with subject and body pre-filled
     document.querySelectorAll('.footer-form').forEach(function(form) {
         form.addEventListener('submit', function(e) {
