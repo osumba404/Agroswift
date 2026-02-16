@@ -998,23 +998,30 @@ img {
     padding: 0;
 }
 
-.trust-card-border {
-    padding: 3px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, var(--primary-tint-60), var(--primary), var(--primary-shade-20));
+/* Trust cards — product (farm) card style, no image section */
+.trust-card {
+    background: var(--white);
+    border-radius: 2rem 2rem 1.8rem 1.8rem;
+    overflow: hidden;
+    box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--primary-tint-80);
     height: 100%;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    padding: 2rem 1.5rem 2rem;
     animation: trustCardReveal 0.5s ease backwards;
 }
 
-.trust-item:nth-child(1) .trust-card-border { animation-delay: 0.05s; }
-.trust-item:nth-child(2) .trust-card-border { animation-delay: 0.12s; }
-.trust-item:nth-child(3) .trust-card-border { animation-delay: 0.19s; }
-.trust-item:nth-child(4) .trust-card-border { animation-delay: 0.26s; }
+.trust-item:nth-child(1) .trust-card { animation-delay: 0.05s; }
+.trust-item:nth-child(2) .trust-card { animation-delay: 0.12s; }
+.trust-item:nth-child(3) .trust-card { animation-delay: 0.19s; }
+.trust-item:nth-child(4) .trust-card { animation-delay: 0.26s; }
 
-.trust-card-border:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(43, 68, 36, 0.15);
+.trust-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 35px -14px var(--primary-shade-20), 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-tint-40);
 }
 
 @keyframes trustCardReveal {
@@ -1028,20 +1035,7 @@ img {
     }
 }
 
-.trust-card-inner {
-    background: var(--white);
-    padding: 2rem 1.5rem;
-    border-radius: 14px;
-    height: 100%;
-    min-height: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-}
-
-.trust-card-icon {
+.trust-card .trust-card-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1055,20 +1049,20 @@ img {
     transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
-.trust-card-border:hover .trust-card-icon {
+.trust-card:hover .trust-card-icon {
     background: var(--primary);
     color: var(--white);
     transform: scale(1.05);
 }
 
-.trust-card-inner h3 {
+.trust-card h3 {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--primary-shade-40);
 }
 
-.trust-card-inner p {
+.trust-card p {
     font-size: 0.95rem;
     color: var(--primary-tint-25);
     line-height: 1.5;
