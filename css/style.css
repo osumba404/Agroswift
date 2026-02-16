@@ -785,8 +785,19 @@ img {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
+/* Faint icons over text — very low opacity so they don't compete with copy */
+.deco-icon--faint {
+    opacity: 0.05;
+}
+.section-deco:hover .deco-icon--faint {
+    opacity: 0.08;
+}
+
 .section-deco:hover .deco-icon {
     opacity: 0.16;
+}
+.section-deco:hover .deco-icon--faint {
+    opacity: 0.08;
 }
 
 .deco-icon i {
@@ -827,13 +838,41 @@ img {
 .deco-icon--truck { top: 2rem; right: 7%; font-size: clamp(2.8rem, 5vw, 3.6rem); transform: rotate(-12deg); }
 .deco-icon--map { bottom: 2rem; left: 10%; font-size: clamp(2.2rem, 4vw, 3rem); transform: rotate(6deg); }
 
+/* Over-text / center positions — faint icons in content area */
+.deco-icon--center { top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-5deg); font-size: clamp(4rem, 12vw, 8rem); }
+.deco-icon--center-top { top: 35%; left: 50%; transform: translate(-50%, -50%) rotate(3deg); font-size: clamp(3rem, 8vw, 5rem); }
+.deco-icon--center-left { top: 45%; left: 15%; font-size: clamp(2.2rem, 5vw, 3.2rem); transform: rotate(-10deg); }
+.deco-icon--center-right { top: 45%; right: 15%; left: auto; font-size: clamp(2.2rem, 5vw, 3.2rem); transform: rotate(8deg); }
+.deco-icon--mid-left { top: 40%; left: 3%; font-size: clamp(2rem, 4vw, 2.8rem); transform: rotate(12deg); }
+.deco-icon--mid-right { top: 40%; right: 3%; left: auto; font-size: clamp(2rem, 4vw, 2.8rem); transform: rotate(-12deg); }
+
+/* Extra positions for more sprinkle icons */
+.deco-icon--pos1 { top: 12%; left: 18%; font-size: clamp(1.8rem, 3.2vw, 2.4rem); transform: rotate(-18deg); }
+.deco-icon--pos2 { top: 22%; right: 22%; left: auto; font-size: clamp(1.6rem, 2.8vw, 2.2rem); transform: rotate(14deg); }
+.deco-icon--pos3 { bottom: 28%; left: 12%; font-size: clamp(1.8rem, 3vw, 2.3rem); transform: rotate(7deg); }
+.deco-icon--pos4 { bottom: 18%; right: 15%; left: auto; font-size: clamp(1.7rem, 2.9vw, 2.2rem); transform: rotate(-9deg); }
+.deco-icon--pos5 { top: 38%; left: 8%; font-size: clamp(1.5rem, 2.6vw, 2rem); transform: rotate(22deg); }
+.deco-icon--pos6 { top: 55%; right: 8%; left: auto; font-size: clamp(1.6rem, 2.7vw, 2.1rem); transform: rotate(-15deg); }
+.deco-icon--pos7 { top: 18%; left: 45%; font-size: clamp(1.4rem, 2.4vw, 1.8rem); transform: rotate(5deg); }
+.deco-icon--pos8 { top: 65%; right: 28%; left: auto; font-size: clamp(1.5rem, 2.5vw, 1.9rem); transform: rotate(-8deg); }
+.deco-icon--pos9 { bottom: 35%; left: 25%; font-size: clamp(1.6rem, 2.8vw, 2.1rem); transform: rotate(11deg); }
+.deco-icon--pos10 { top: 42%; right: 25%; left: auto; font-size: clamp(1.5rem, 2.6vw, 2rem); transform: rotate(-6deg); }
+.deco-icon--pos11 { top: 28%; left: 28%; font-size: clamp(1.4rem, 2.3vw, 1.8rem); transform: rotate(16deg); }
+.deco-icon--pos12 { top: 48%; right: 35%; left: auto; font-size: clamp(1.3rem, 2.2vw, 1.7rem); transform: rotate(-11deg); }
+.deco-icon--pos13 { bottom: 42%; left: 35%; font-size: clamp(1.5rem, 2.5vw, 1.9rem); transform: rotate(9deg); }
+.deco-icon--pos14 { top: 72%; left: 18%; font-size: clamp(1.4rem, 2.4vw, 1.8rem); transform: rotate(-14deg); }
+.deco-icon--pos15 { top: 8%; right: 35%; left: auto; font-size: clamp(1.6rem, 2.7vw, 2rem); transform: rotate(8deg); }
+
 @media (max-width: 768px) {
     .deco-icon { opacity: 0.08; }
     .section-deco:hover .deco-icon { opacity: 0.12; }
+    .deco-icon--faint { opacity: 0.04; }
     .deco-icon--seedling,
     .deco-icon--droplet,
     .deco-icon--cart,
     .deco-icon--map { display: none; }
+    .deco-icon--center,
+    .deco-icon--center-top { display: none; }
 }
 
 .welcome-section {
