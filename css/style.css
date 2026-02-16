@@ -613,6 +613,15 @@ img {
     max-width: 720px;
     position: relative;
 }
+/* Inline icons (replacing emojis in headings/copy) */
+.inline-icon {
+    display: inline;
+    margin: 0 0.25em;
+    font-size: 1.25em;
+    vertical-align: middle;
+    color: var(--primary);
+}
+
 .products-intro-badge {
     display: inline-block;
     font-size: 0.75rem;
@@ -785,32 +794,46 @@ img {
 }
 
 /* Welcome */
-.deco-icon--leaf { top: 2rem; right: 8%; font-size: clamp(2.5rem, 5vw, 4rem); transform: rotate(-15deg); }
-.deco-icon--wheat { bottom: 3rem; left: 5%; font-size: clamp(2rem, 4vw, 3rem); transform: rotate(8deg); }
-.deco-icon--seedling { top: 50%; right: 2%; font-size: clamp(1.8rem, 3.5vw, 2.5rem); transform: rotate(12deg); }
+.deco-icon--leaf { top: 2rem; right: 8%; font-size: clamp(3rem, 6vw, 4.8rem); transform: rotate(-15deg); }
+.deco-icon--wheat { bottom: 3rem; left: 5%; font-size: clamp(2.4rem, 4.8vw, 3.6rem); transform: rotate(8deg); }
+.deco-icon--seedling { top: 50%; right: 2%; font-size: clamp(2.2rem, 4.2vw, 3rem); transform: rotate(12deg); }
 
 /* Trust */
-.deco-icon--tractor { top: 1.5rem; left: 6%; font-size: clamp(2.2rem, 4vw, 3.2rem); transform: rotate(-8deg); }
-.deco-icon--sun { bottom: 2rem; right: 10%; font-size: clamp(2rem, 3.5vw, 2.8rem); transform: rotate(5deg); }
+.deco-icon--tractor { top: 1.5rem; left: 6%; font-size: clamp(2.6rem, 4.8vw, 3.8rem); transform: rotate(-8deg); }
+.deco-icon--sun { bottom: 2rem; right: 10%; font-size: clamp(2.4rem, 4.2vw, 3.4rem); transform: rotate(5deg); }
 
 /* About */
-.deco-icon--apple { top: 3rem; right: 4%; font-size: clamp(2rem, 3.5vw, 2.6rem); transform: rotate(-20deg); }
-.deco-icon--basket { bottom: 4rem; left: 8%; font-size: clamp(2.5rem, 4vw, 3.2rem); transform: rotate(10deg); }
-.deco-icon--droplet { top: 45%; left: 2%; font-size: clamp(1.6rem, 3vw, 2.2rem); transform: rotate(-5deg); }
+.deco-icon--apple { top: 3rem; right: 4%; font-size: clamp(2.4rem, 4.2vw, 3.2rem); transform: rotate(-20deg); }
+.deco-icon--basket { bottom: 4rem; left: 8%; font-size: clamp(3rem, 4.8vw, 3.8rem); transform: rotate(10deg); }
+.deco-icon--droplet { top: 45%; left: 2%; font-size: clamp(2rem, 3.6vw, 2.6rem); transform: rotate(-5deg); }
 
 /* Why Us */
-.deco-icon--tree { top: 2rem; right: 12%; font-size: clamp(2.8rem, 5vw, 3.8rem); transform: rotate(3deg); }
-.deco-icon--hand-seed { bottom: 2rem; left: 5%; font-size: clamp(2rem, 3.5vw, 2.6rem); transform: rotate(-12deg); }
+.deco-icon--tree { top: 2rem; right: 12%; font-size: clamp(3.4rem, 6vw, 4.6rem); transform: rotate(3deg); }
+.deco-icon--hand-seed { bottom: 2rem; left: 5%; font-size: clamp(2.4rem, 4.2vw, 3.2rem); transform: rotate(-12deg); }
 
 /* Explore */
-.deco-icon--earth { top: 1.5rem; left: 7%; font-size: clamp(2.4rem, 4vw, 3.2rem); transform: rotate(-6deg); }
-.deco-icon--carrot { bottom: 2.5rem; right: 6%; font-size: clamp(1.8rem, 3vw, 2.4rem); transform: rotate(15deg); }
+.deco-icon--earth { top: 1.5rem; left: 7%; font-size: clamp(2.9rem, 4.8vw, 3.8rem); transform: rotate(-6deg); }
+.deco-icon--carrot { bottom: 2.5rem; right: 6%; font-size: clamp(2.2rem, 3.6vw, 2.9rem); transform: rotate(15deg); }
+
+/* Products intro */
+.deco-icon--boxes { top: 2rem; right: 10%; font-size: clamp(2.8rem, 5vw, 3.8rem); transform: rotate(-10deg); }
+.deco-icon--cart { bottom: 2rem; left: 6%; font-size: clamp(2.2rem, 4vw, 3rem); transform: rotate(8deg); }
+
+/* Impact intro */
+.deco-icon--chart-line { top: 1.5rem; left: 8%; font-size: clamp(2.6rem, 4.5vw, 3.4rem); transform: rotate(5deg); }
+.deco-icon--users { bottom: 2.5rem; right: 8%; font-size: clamp(2.4rem, 4vw, 3.2rem); transform: rotate(-8deg); }
+
+/* Distribution intro */
+.deco-icon--truck { top: 2rem; right: 7%; font-size: clamp(2.8rem, 5vw, 3.6rem); transform: rotate(-12deg); }
+.deco-icon--map { bottom: 2rem; left: 10%; font-size: clamp(2.2rem, 4vw, 3rem); transform: rotate(6deg); }
 
 @media (max-width: 768px) {
     .deco-icon { opacity: 0.08; }
     .section-deco:hover .deco-icon { opacity: 0.12; }
     .deco-icon--seedling,
-    .deco-icon--droplet { display: none; }
+    .deco-icon--droplet,
+    .deco-icon--cart,
+    .deco-icon--map { display: none; }
 }
 
 .welcome-section {
