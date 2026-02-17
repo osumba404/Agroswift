@@ -46,6 +46,11 @@ document.addEventListener('DOMContentLoaded', function() {
         navBackdrop.addEventListener('click', closeMenu);
     }
 
+    const navMenuClose = document.getElementById('nav-menu-close');
+    if (navMenuClose && navMenu) {
+        navMenuClose.addEventListener('click', closeMenu);
+    }
+
     // Close menu when clicking a link
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
@@ -93,6 +98,10 @@ document.addEventListener('DOMContentLoaded', function() {
             goToSlide(current + 1);
         }
 
+        function prevSlide() {
+            goToSlide(current - 1);
+        }
+
         function startAutoplay() {
             stopAutoplay();
             autoplayTimer = setInterval(nextSlide, 6000);
@@ -108,6 +117,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 startAutoplay();
             });
         });
+
+        const prevBtn = heroSlider.querySelector('.hero-arrow--prev');
+        const nextBtn = heroSlider.querySelector('.hero-arrow--next');
+        if (prevBtn) prevBtn.addEventListener('click', function() { prevSlide(); startAutoplay(); });
+        if (nextBtn) nextBtn.addEventListener('click', function() { nextSlide(); startAutoplay(); });
 
         startAutoplay();
         heroSlider.addEventListener('mouseenter', stopAutoplay);
