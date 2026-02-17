@@ -367,6 +367,11 @@ img {
     z-index: 1;
 }
 
+/* Slide image as faint background on mobile only */
+.hero-slide-bg-mobile {
+    display: none;
+}
+
 .hero-inner {
     display: flex;
     width: 100%;
@@ -697,10 +702,13 @@ img {
         background: linear-gradient(to bottom, transparent 0%, var(--primary-shade-40) 90%);
     }
 
-    .hero-visual-panel {
-        min-height: 380px;
-        width: 100%;
-        flex: 1 1 380px;
+        /* On mobile: do not display the bottom image — slide image as background only */
+    .hero-three .hero-visual-panel {
+        display: none !important;
+    }
+
+    .hero-text-panel {
+        min-height: 50vh;
     }
 
     .hero-title {
@@ -709,6 +717,24 @@ img {
 
     .hero-subtitle {
         font-size: 1.1rem;
+    }
+
+    /* Hero slide image as background behind text on mobile (only place image shows) */
+    .hero-slide-bg-mobile {
+        display: block;
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.2;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .hero-inner {
+        position: relative;
+        z-index: 1;
     }
 }
 
@@ -1033,6 +1059,27 @@ img {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/* Title + icon on same horizontal line (trust, distribution, impact, explore cards) */
+.card-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-title-row h3 {
+    margin-bottom: 0;
+    flex: 1;
+    min-width: 0;
+}
+
+.card-title-row .trust-card-icon,
+.card-title-row .distribution-card-icon,
+.card-title-row .impact-card-icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
 }
 
 .trust-card .trust-card-icon {
@@ -1751,11 +1798,17 @@ img {
     line-height: 1.2;
 }
 
-/* About premium block — mission, vision, what we do */
+/* About premium block — mission, vision, what we do (impact-style cards) */
 .about-premium {
     margin-top: 3rem;
     display: flex;
     flex-direction: column;
+    gap: 2rem;
+}
+
+.about-premium--impact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -2015,6 +2068,27 @@ img {
 
 .why-us-main {
     padding: 2.5rem 2.25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Farmer-first block: image as visible background */
+.why-us-main::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('../assets/images/hero/18.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.22;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.why-us-main > * {
+    position: relative;
+    z-index: 1;
 }
 
 .why-us-intro {
@@ -2246,6 +2320,10 @@ img {
     font-size: 1.35rem;
 }
 
+.impact-card .card-title-row .impact-card-icon {
+    margin-bottom: 0;
+}
+
 .impact-card h3 {
     font-size: 1.25rem;
     font-weight: 600;
@@ -2292,34 +2370,27 @@ img {
     gap: 2rem;
 }
 
+/* Distribution cards — product/trust style (no image section) */
 .distribution-card {
-    padding: 0;
-}
-
-.distribution-card-border {
-    padding: 3px;
-    border-radius: 16px;
-    background: linear-gradient(135deg, var(--primary-tint-70), var(--primary), var(--secondary-tint-60));
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.distribution-card-border:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(43, 68, 36, 0.15);
-}
-
-.distribution-card-inner {
     background: var(--white);
-    border-radius: 14px;
-    padding: 2rem 1.5rem;
-    height: 100%;
+    border-radius: 2rem 2rem 1.8rem 1.8rem;
+    overflow: hidden;
+    box-shadow: 0 15px 25px -10px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    border: 1px solid var(--primary-tint-80);
+    height: 100%;
+    padding: 2rem 1.5rem 2rem;
 }
 
-.distribution-card-icon {
+.distribution-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 35px -14px var(--primary-shade-20), 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-tint-40);
+}
+
+.distribution-card .distribution-card-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -2330,12 +2401,23 @@ img {
     color: var(--primary);
     border-radius: 12px;
     font-size: 1.35rem;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.distribution-card .card-title-row .distribution-card-icon {
+    margin-bottom: 0;
+}
+
+.distribution-card:hover .distribution-card-icon {
+    background: var(--primary);
+    color: var(--white);
+    transform: scale(1.05);
 }
 
 .distribution-card h3 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
     color: var(--primary-shade-40);
 }
 
