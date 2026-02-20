@@ -1,5 +1,5 @@
 /* ============================================
-   AgroSwift color palette — Primary #2b4424, Secondary #6b1a0f
+   Agroswift color palette — Primary #2b4424, Secondary #6b1a0f
    Tints = white mix | Shades = black mix | AAA/AA contrast noted
    ============================================ */
 :root {
@@ -1635,7 +1635,7 @@ img {
 }
 
 .farmstead-section .card-image::after {
-    content: 'AgroSwift';
+    content: 'Agroswift';
     position: absolute;
     top: 1rem;
     right: 1rem;
