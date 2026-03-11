@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agroswift | Full-Screen Hero</title>
+    <style>
+        /* ============================================
+        Agroswift color palette — Primary #2b4424, Secondary #6b1a0f
+        Tints = white mix | Shades = black mix | AAA/AA contrast noted
+        ============================================ */
+        :root {
+            /* Primary — forest green */
+            --primary: #2b4424;
+            --primary-tint-90: #eaece9;
+            --primary-tint-80: #d5dad3;
+            --primary-tint-60: #aab4a7;
+            --primary-tint-40: #808f7c;
+            --primary-tint-20: #556950;
+            --primary-shade-20: #22361d;
+            --primary-shade-40: #1a2916;
+
+            /* Secondary — burgundy / terracotta */
+            --secondary: #6b1a0f;
+            --secondary-tint-90: #f0e8e7;
+            --secondary-tint-80: #e1d1cf;
+            --secondary-tint-60: #c4a39f;
+            --secondary-tint-40: #a6766f;
+            --secondary-tint-20: #89483f;
+            --secondary-shade-20: #56150c;
+            --secondary-shade-40: #401009;
+
+            /* Semantic aliases (map to palette) */
+            --primary-color: var(--primary);
+            --secondary-color: var(--secondary);
+            --accent-color: #8dbf3f;
+            --dark-color: #1F1F1F;
+            --light-color: var(--primary-tint-90);
+            --white: #ffffff;
+            --grey: var(--primary-tint-40);
+            --light-grey: var(--primary-tint-80);
+            --transition: all 0.3s ease;
+            --font-main: 'Myriad Pro', 'Myriad', sans-serif;
+        }
+
+        /* === RESET & BASE STYLES === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            line-height: 1.5;
+        }
+
+        /* === NAVIGATION - NOW INDEPENDENT === */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: transparent;
+            transition: var(--transition);
+        }
+
+        /* Navbar becomes solid on scroll - added via JavaScript */
+        .navbar.scrolled {
+            background: var(--primary);
+            padding: 1rem 4rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar.scrolled .logo {
+            color: var(--white);
+        }
+
+        .navbar.scrolled .logo::after {
+            background: var(--accent-color);
+        }
+
+        .navbar.scrolled .nav-links a {
+            color: var(--primary-tint-80);
+        }
+
+        .navbar.scrolled .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--primary-tint-80);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* === HERO SECTION - FULL SCREEN STORY === */
+        .hero {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            margin-top: 0; /* No margin because navbar is fixed */
+            
+            /* Background image with only green overlay */
+            background-image: linear-gradient(
+                115deg,
+                rgba(43, 68, 36, 0.85) 0%,
+                rgba(43, 68, 36, 0.75) 50%,
+                rgba(43, 68, 36, 0.9) 100%
+            ), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+        }
+
+        /* === CONTENT CONTAINER === */
+        .hero-content {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* === TYPOGRAPHY === */
+        .pre-headline {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem;
+            color: var(--primary-tint-60);
+            font-weight: 500;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .headline {
+            font-size: clamp(2.5rem, 8vw, 5.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .headline .accent {
+            color: var(--accent-color);
+            display: inline-block;
+            position: relative;
+        }
+
+        .headline .accent::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: var(--primary-tint-40);
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .subheadline {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            color: var(--primary-tint-80);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        /* === BUTTONS === */
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-family: var(--font-main);
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: var(--primary-shade-40);
+            box-shadow: 0 10px 20px -5px rgba(141, 191, 63, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-tint-20);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 20px 30px -5px rgba(43, 68, 36, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border-color: var(--primary-tint-60);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-tint-20);
+            border-color: var(--primary-tint-20);
+            transform: translateY(-2px);
+        }
+
+        /* === SEEDLING SCROLL INDICATOR === */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-tint-60);
+            font-size: 0.875rem;
+            letter-spacing: 1px;
+            animation: bounce 2s infinite;
+            z-index: 10;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .seedling-icon {
+            width: 40px;
+            height: 40px;
+            fill: none;
+            stroke: var(--accent-color);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: var(--transition);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+
+        .scroll-indicator:hover .seedling-icon {
+            transform: scale(1.1);
+            stroke: var(--white);
+        }
+
+        .scroll-indicator span {
+            color: var(--white);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.75rem;
+        }
+
+        /* === ANIMATIONS === */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        /* === CONTENT SECTION (for scrolling demo) === */
+        .content-section {
+            min-height: 100vh;
+            background: var(--primary-tint-90);
+            padding: 8rem 4rem 4rem;
+            color: var(--primary);
+            font-family: var(--font-main);
+        }
+
+        .content-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .content-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px -10px rgba(43, 68, 36, 0.2);
+            transition: var(--transition);
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(43, 68, 36, 0.3);
+        }
+
+        .content-card h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .content-card p {
+            color: var(--primary-tint-40);
+            line-height: 1.6;
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            .navbar,
+            .navbar.scrolled {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .logo::after {
+                width: 30px;
+            }
+
+            .hero-content {
+                padding: 1rem;
+            }
+
+            .headline {
+                font-size: 2.5rem;
+            }
+
+            .subheadline {
+                font-size: 1.125rem;
+            }
+
+            .cta-group {
+                gap: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                padding: 0.875rem 1.75rem;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .scroll-indicator {
+                bottom: 1rem;
+            }
+
+            .seedling-icon {
+                width: 32px;
+                height: 32px;
+            }
+
+            .content-section {
+                padding: 6rem 1.5rem 2rem;
+            }
+        }
+
+        /* === CUSTOM LAYOUT OPTIONS === */
+
+        /* Content aligned left */
+        .hero.content-left .hero-content {
+            text-align: left;
+            margin-left: 4rem;
+        }
+
+        .hero.content-left .subheadline {
+            margin-left: 0;
+        }
+
+        .hero.content-left .cta-group {
+            justify-content: flex-start;
+        }
+
+        /* Top accent bar */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color) 0%, var(--primary) 100%);
+            z-index: 20;
+        }
+    </style>
+</head>
+<body>
+    <!-- Independent Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="logo">AGROSWIFT</a>
+        <div class="nav-links">
+            <a href="#">Solutions</a>
+            <a href="#">Technology</a>
+            <a href="#">Impact</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <!-- MAIN HERO SECTION -->
+    <section class="hero">
+        <!-- Main Hero Content -->
+        <div class="hero-content">
+            <p class="pre-headline">SUSTAINABLE AGRICULTURE</p>
+            <h1 class="headline">
+                Grow smarter with <span class="accent">Agroswift</span>
+            </h1>
+            <p class="subheadline">
+                Empowering farmers with precision technology and sustainable practices. 
+                From forest to harvest, we're revolutionizing agriculture.
+            </p>
+            
+            <!-- Call to Action Buttons -->
+            <div class="cta-group">
+                <a href="#" class="btn btn-primary">Start Growing</a>
+                <a href="#" class="btn btn-secondary">See Technology →</a>
+            </div>
+        </div>
+
+        <!-- Seedling Scroll Indicator (replaces mouse) -->
+        <a href="#content" class="scroll-indicator">
+            <svg class="seedling-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 4V20M12 4C12 4 8 4 6 8C4 12 8 14 12 14C16 14 20 12 18 8C16 4 12 4 12 4Z" />
+                <path d="M12 20L16 16" />
+                <path d="M12 20L8 16" />
+            </svg>
+            <span>DISCOVER</span>
+        </a>
+    </section>
+
+    <!-- Content Section (scroll target) -->
+    <section id="content" class="content-section">
+        <div class="content-grid">
+            <div class="content-card">
+                <h2>Precision Farming</h2>
+                <p>Our technology helps farmers optimize water usage, reduce waste, and increase crop yields through data-driven insights.</p>
+            </div>
+            <div class="content-card">
+                <h2>Sustainable Practices</h2>
+                <p>We're committed to regenerative agriculture that restores soil health and promotes biodiversity for future generations.</p>
+            </div>
+            <div class="content-card">
+                <h2>Smart Harvesting</h2>
+                <p>AI-powered tools that predict optimal harvest times and automate labor-intensive processes.</p>
+            </div>
+            <div class="content-card">
+                <h2>Supply Chain</h2>
+                <p>End-to-end traceability from field to fork, ensuring transparency and reducing food waste.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Navbar scroll effect - makes it detach and become solid
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for the seedling indicator
+        document.querySelector('.scroll-indicator').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#content').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

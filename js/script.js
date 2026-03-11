@@ -59,19 +59,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Sticky Navbar shadow on scroll
-    const navbar = document.querySelector('.navbar');
+    // Navbar scroll effect (deep.html style): transparent at top, solid on scroll
+    const navbar = document.getElementById('navbar') || document.querySelector('.navbar');
     if (navbar) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 0) {
-                navbar.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
+        function updateNavbarScroll() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
             } else {
-                navbar.style.boxShadow = "0 2px 10px rgba(0,0,0,0.05)";
+                navbar.classList.remove('scrolled');
+            }
+        }
+        updateNavbarScroll();
+        window.addEventListener('scroll', updateNavbarScroll);
+    }
+
+    // Hero scroll indicator — smooth scroll to #welcome
+    const heroScrollIndicator = document.querySelector('.hero-scroll-indicator');
+    if (heroScrollIndicator) {
+        heroScrollIndicator.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId.startsWith('#')) {
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
             }
         });
     }
 
-    // Hero slider (home page)
+    // Hero slider (home page) — only when slider present
     const heroSlider = document.querySelector('.hero-slider');
     if (heroSlider) {
         const slides = heroSlider.querySelectorAll('.hero-slide');
@@ -92,6 +109,8 @@ document.addEventListener('DOMContentLoaded', function() {
             dots.forEach(function(d, i) {
                 d.classList.toggle('active', i === current);
             });
+            var counterEl = heroSlider.querySelector('.hero-slide-current');
+            if (counterEl) counterEl.textContent = String(current + 1).padStart(2, '0');
         }
 
         function nextSlide() {

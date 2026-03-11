@@ -62,10 +62,10 @@
     </script>
 </head>
 
-<body>
+<body class="page-home">
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="container">
             <a href="index.html" class="logo-wrap">
                 <img src="assets/images/logo/agroswift_logo.png" alt="Agroswift" class="logo-img" onerror="this.style.display='none'">
@@ -94,14 +94,14 @@
         <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
     </nav>
 
-    <!-- Hero Section — edge-to-edge split panel + gradient blend (3 slides) -->
-    <section id="home" class="hero hero--slider hero-three">
+    <!-- Hero Section — deep.html layout: full-bleed bg + centered content, 3 slides unchanged -->
+    <section id="home" class="hero hero--slider hero-three hero-layout-deep">
         <div class="hero-slider">
             <!-- Slide 1 -->
             <div class="hero-slide active" data-slide="0">
-                <div class="hero-slide-bg-mobile" style="background-image: url('assets/images/hero/blog.jpg');" aria-hidden="true"></div>
+                <div class="hero-slide-bg" style="background-image: linear-gradient(115deg, rgba(43,68,36,0.85) 0%, rgba(43,68,36,0.75) 50%, rgba(43,68,36,0.9) 100%), url('assets/images/hero/blog.jpg');"></div>
                 <div class="hero-inner">
-                    <div class="hero-text-panel">
+                    <div class="hero-text-panel hero-text-panel--center">
                         <span class="slide-label">01 - Unleashing Agroswift</span>
                         <h1 class="hero-title">Dependable agro-inputs, <span>delivered swiftly.</span></h1>
                         <p class="hero-subtitle">Agroswift connects farmers, retailers, and distributors to genuine agricultural inputs, fast delivery, and practical support.</p>
@@ -110,42 +110,28 @@
                             <a href="#contact" class="btn btn-outline-light">Our Contacts</a>
                         </div>
                     </div>
-                    <div class="hero-visual-panel">
-                        <div class="visual-bg" style="background-image: url('assets/images/hero/blog.jpg');"></div>
-                        <div class="visual-layer"></div>
-                        <div class="glow-orb"></div>
-                        <div class="foreground-grain"></div>
-                        <div class="bottom-accent"></div>
-                    </div>
                 </div>
             </div>
             <!-- Slide 2 -->
             <div class="hero-slide" data-slide="1">
-                <div class="hero-slide-bg-mobile" style="background-image: url('assets/images/hero/Agrovet-4.jpg');" aria-hidden="true"></div>
+                <div class="hero-slide-bg" style="background-image: linear-gradient(115deg, rgba(43,68,36,0.85) 0%, rgba(43,68,36,0.75) 50%, rgba(43,68,36,0.9) 100%), url('assets/images/hero/Agrovet-4.jpg');"></div>
                 <div class="hero-inner">
-                    <div class="hero-text-panel">
+                    <div class="hero-text-panel hero-text-panel--center">
                         <span class="slide-label">02 - Fast Hand Solutions</span>
-                        <h1 class="hero-title">From need to solution—<span>fast, accurate, farmer-first.</span></h1>
+                        <h1 class="hero-title">From need to solution-<span>fast, accurate, farmer-first.</span></h1>
                         <p class="hero-subtitle">Quality seeds, crop protection, animal health, and farm tools—backed by expert advisory and reliable distribution.</p>
                         <div class="btn-group">
                             <a href="products.html" class="btn btn-primary">Browse products</a>
                             <a href="#why-us" class="btn btn-outline-light">Why Agroswift</a>
                         </div>
                     </div>
-                    <div class="hero-visual-panel">
-                        <div class="visual-bg" style="background-image: url('assets/images/hero/Agrovet-4.jpg');"></div>
-                        <div class="visual-layer"></div>
-                        <div class="glow-orb"></div>
-                        <div class="foreground-grain"></div>
-                        <div class="bottom-accent"></div>
-                    </div>
                 </div>
             </div>
             <!-- Slide 3 -->
             <div class="hero-slide" data-slide="2">
-                <div class="hero-slide-bg-mobile" style="background-image: url('assets/images/hero/chicken-traditional-free-range-poultry-farm.webp');" aria-hidden="true"></div>
+                <div class="hero-slide-bg" style="background-image: linear-gradient(115deg, rgba(43,68,36,0.85) 0%, rgba(43,68,36,0.75) 50%, rgba(43,68,36,0.9) 100%), url('assets/images/livestock/Our\ Dairy.jpg');"></div>
                 <div class="hero-inner">
-                    <div class="hero-text-panel">
+                    <div class="hero-text-panel hero-text-panel--center">
                         <span class="slide-label">03 - Your Trusted Agricultural Partner</span>
                         <h1 class="hero-title">Trusted by farmers and <span>agro-vet partners.</span></h1>
                         <p class="hero-subtitle">Verified quality, consistent stock, and swift last-mile delivery across East Africa.</p>
@@ -154,22 +140,22 @@
                             <a href="#contact" class="btn btn-outline-light">Get in touch</a>
                         </div>
                     </div>
-                    <div class="hero-visual-panel">
-                        <div class="visual-bg" style="background-image: url('assets/images/hero/chicken-traditional-free-range-poultry-farm.webp');"></div>
-                        <div class="visual-layer"></div>
-                        <div class="glow-orb"></div>
-                        <div class="foreground-grain"></div>
-                        <div class="bottom-accent"></div>
-                    </div>
                 </div>
             </div>
             <button type="button" class="hero-arrow hero-arrow--prev" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
             <button type="button" class="hero-arrow hero-arrow--next" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="hero-slide-counter" aria-hidden="true">
+                <span class="hero-slide-current">01</span><span class="hero-slide-divider">/</span><span class="hero-slide-total">03</span>
+            </div>
             <div class="hero-dots" aria-label="Hero slide navigation">
                 <button type="button" class="hero-dot active" data-slide="0" aria-label="Go to slide 1"></button>
                 <button type="button" class="hero-dot" data-slide="1" aria-label="Go to slide 2"></button>
                 <button type="button" class="hero-dot" data-slide="2" aria-label="Go to slide 3"></button>
             </div>
+            <a href="#welcome" class="hero-scroll-indicator hero-three-scroll-indicator" aria-label="Scroll to content">
+                <i class="fa-solid fa-seedling hero-seedling-icon" aria-hidden="true"></i>
+                <span>Discover</span>
+            </a>
         </div>
     </section>
 
